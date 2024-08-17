@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Sensory Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>Sensory Diet Plan Generator</h1>
+        <div class="watermark">Zeynep and Alessia</div>
+
+        <div class="info-section">
+            <h2>Activity Categories</h2>
+            <div class="category">
+                <h3>Movement (Vestibular)</h3>
+                <p>Activities that involve moving the body in different ways, such as rolling, swinging, and jumping.</p>
+                <ul>
+                    <li>Rolling on Peanut Ball</li>
+                    <li>Swinging</li>
+                    <li>Trampoline Jumping</li>
+                    <li>Dancing</li>
+                    <li>Obstacle Course</li>
+                    <li>Yoga</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>Touch (Tactile)</h3>
+                <p>Activities that involve touching and feeling different textures, such as playing with playdough, finger painting, and water play.</p>
+                <ul>
+                    <li>Play with Playdough</li>
+                    <li>Finger Painting</li>
+                    <li>Sensory Bin with Rice</li>
+                    <li>Play with Sand</li>
+                    <li>Play with Slime</li>
+                    <li>Water Play</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>Proprioceptive</h3>
+                <p>Activities that involve heavy work or deep pressure, such as jumping jacks, hopping on one foot, and climbing.</p>
+                <ul>
+                    <li>Jumping Jacks</li>
+                    <li>Hopping on One Foot</li>
+                    <li>Push-Ups</li>
+                    <li>Climbing</li>
+                    <li>Wall Pushes</li>
+                    <li>Bear Crawls</li>
+                </ul>
+            </div>
+        </div>
+
+        <form id="sensory-form">
+            <label for="age">Select Age Group:</label>
+            <select id="age">
+                <option value="toddler">Toddler</option>
+                <option value="preschooler">Preschooler</option>
+                <option value="school-aged">School-Aged</option>
+            </select>
+            
+            <h3>Choose Activities for Each Time of Day:</h3>
+            <label for="before-breakfast">Before Breakfast:</label>
+            <select id="before-breakfast" class="activity-select" onchange="toggleCustomActivity('before-breakfast')">
+                <option value="movement">Rolling on Peanut Ball</option>
+                <option value="tactile">Play with Playdough</option>
+                <option value="proprioceptive">Jumping Jacks</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type="text" id="before-breakfast-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+
+            <label for="after-breakfast">After Breakfast:</label>
+            <select id="after-breakfast" class="activity-select" onchange="toggleCustomActivity('after-breakfast')">
+                <option value="movement">Swinging</option>
+                <option value="tactile">Finger Painting</option>
+                <option value="proprioceptive">Hopping on One Foot</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type="text" id="after-breakfast-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+
+            <label for="before-lunch">Before Lunch:</label>
+            <select id="before-lunch" class="activity-select" onchange="toggleCustomActivity('before-lunch')">
+                <option value="movement">Trampoline Jumping</option>
+                <option value="tactile">Sensory Bin with Rice</option>
+                <option value="proprioceptive">Push-Ups</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type="text" id="before-lunch-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+
+            <label for="after-lunch">After Lunch:</label>
+            <select id="after-lunch" class="activity-select" onchange="toggleCustomActivity('after-lunch')">
+                <option value="movement">Dancing</option>
+                <option value="tactile">Play with Sand</option>
+                <option value="proprioceptive">Climbing</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type="text" id="after-lunch-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+
+            <label for="before-dinner">Before Dinner:</label>
+            <select id="before-dinner" class="activity-select" onchange="toggleCustomActivity('before-dinner')">
+                <option value="movement">Obstacle Course</option>
+                <option value="tactile">Play with Slime</option>
+                <option value="proprioceptive">Wall Pushes</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type="text" id="before-dinner-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+
+            <label for="after-dinner">After Dinner:</label>
+            <select id="after-dinner" class="activity-select" onchange="toggleCustomActivity('after-dinner')">
+                <option value="movement">Yoga</option>
+                <option value="tactile">Water Play</option>
+                <option value="proprioceptive">Bear Crawls</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type="text" id="after-dinner-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+
+            <div id="custom-times-container"></div>
+
+            <button type="button" onclick="addCustomTime()">Add Custom Time/Event</button>
+            <button type="button" onclick="generatePlan()">Generate Plan</button>
+            <button type="button" onclick="exportToPDF()">Export to PDF</button>
+            <input type="file" id="import-file" style="display:none" onchange="importPlan(event)">
+            <button type="button" onclick="document.getElementById('import-file').click()">Import Plan</button>
+        </form>
+
+        <h2>Your Sensory Diet Plan</h2>
+        <div id="result" class="plan-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
