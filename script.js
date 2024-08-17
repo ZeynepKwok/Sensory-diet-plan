@@ -1,125 +1,191 @@
-function toggleCustomActivity(timeOfDay) {
-    const selectElement = document.getElementById(timeOfDay);
-    const customInputElement = document.getElementById(`${timeOfDay}-custom`);
-    if (selectElement.value === 'custom') {
-        customInputElement.style.display = 'block';
+// Show the popup when the page loads
+window.onload = function () {
+    document.getElementById("disclaimer-popup").style.display = "block";
+};
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("disclaimer-popup").style.display = "none";
+}
+
+// Function to toggle custom time input field
+function toggleCustomTime(id) {
+    const select = document.getElementById(id);
+    const customInput = document.getElementById(`custom-time-${id}`);
+    if (select.value === "Custom") {
+        customInput.style.display = "block";
+        customInput.focus();
     } else {
-        customInputElement.style.display = 'none';
+        customInput.style.display = "none";
     }
 }
 
-function addCustomTime() {
-    const container = document.getElementById('custom-times-container');
-    const index = container.children.length;
-    const timeId = `custom-time-${index}`;
-    const activityId = `custom-activity-${index}`;
-    const customTimeHtml = `
-        <div class="custom-time-row" id="custom-time-row-${index}">
-            <input type="text" id="${timeId}" class="custom-time-input" placeholder="Enter custom time or event">
-            <select id="${activityId}" class="activity-select" onchange="toggleCustomActivity('${activityId}')">
-                <option value="movement">Rolling on Peanut Ball</option>
-                <option value="tactile">Play with Playdough</option>
-                <option value="proprioceptive">Jumping Jacks</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="${activityId}-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
-            <button type="button" onclick="deleteCustomTime(${index})">Delete</button>
-        </div>
-    `;
-    container.insertAdjacentHTML('beforeend', customTimeHtml);
+// Function to toggle custom mood input field
+function toggleCustomMood(id) {
+    const select = document.getElementById(`mood-${id}`);
+    const customInput = document.getElementById(`custom-mood-${id}`);
+    if (select.value === "Custom") {
+        customInput.style.display = "block";
+        customInput.focus();
+    } else {
+        customInput.style.display = "none";
+    }
 }
 
-function deleteCustomTime(index) {
-    const row = document.getElementById(`custom-time-row-${index}`);
-    row.remove();
+// Function to toggle custom activity input field
+function toggleCustomActivity(id) {
+    const select = document.getElementById(`activity-${id}`);
+    const customInput = document.getElementById(`custom-activity-${id}`);
+    if (select.value === "Custom") {
+        customInput.style.display = "block";
+        customInput.focus();
+    } else {
+        customInput.style.display = "none";
+    }
 }
 
+// Object to track mood changes for summary
+let moodChanges = {
+    totalActivities: 0,
+    positiveToCalm: 0,
+    calmToPositive: 0,
+    positiveToNegative: 0,
+    calmToNegative: 0,
+    negativeToCalm: 0,
+    totalMoodImprovement: 0, // Tracks overall positive mood transitions
+    totalMoodDecline: 0      // Tracks overall negative mood transitions
+};
+
+// Function to reset moodChanges
+function resetMoodChanges() {
+    moodChanges.totalActivities = 0;
+    moodChanges.positiveToCalm = 0;
+    moodChanges.calmToPositive = 0;
+    moodChanges.positiveToNegative = 0;
+    moodChanges.calmToNegative = 0;
+    moodChanges.negativeToCalm = 0;
+    moodChanges.totalMoodImprovement = 0;
+    moodChanges.totalMoodDecline = 0;
+}
+
+// Function to track mood transitions after each activity
+function trackMoodTransition(moodBefore, moodAfter) {
+    if (moodBefore === "Positive" && moodAfter === "Calm") {
+        moodChanges.positiveToCalm++;
+    } else if (moodBefore === "Calm" && moodAfter === "Positive") {
+        moodChanges.calmToPositive++;
+        moodChanges.totalMoodImprovement++;
+    } else if (moodBefore === "Positive" && moodAfter === "Negative") {
+        moodChanges.positiveToNegative++;
+        moodChanges.totalMoodDecline++;
+    } else if (moodBefore === "Calm" && moodAfter === "Negative") {
+        moodChanges.calmToNegative++;
+        moodChanges.totalMoodDecline++;
+    } else if (moodBefore === "Negative" && moodAfter === "Calm") {
+        moodChanges.negativeToCalm++;
+        moodChanges.totalMoodImprovement++;
+    }
+}
+
+// Function to get the current date in a readable format
+function getCurrentDate() {
+    const date = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+// Function to generate the plan
 function generatePlan() {
-    const age = document.getElementById('age').value;
+    resetMoodChanges();  // Reset the moodChanges object
 
-    const beforeBreakfast = getActivity('before-breakfast');
-    const afterBreakfast = getActivity('after-breakfast');
-    const beforeLunch = getActivity('before-lunch');
-    const afterLunch = getActivity('after-lunch');
-    const beforeDinner = getActivity('before-dinner');
-    const afterDinner = getActivity('after-dinner');
+    const currentDate = getCurrentDate(); // Get current date
+    const rows = document.querySelectorAll(".sensory-plan-table tbody tr");
+    let planContainer = document.createElement("div");
+    planContainer.classList.add("plan-container");
 
-    let plan = `
-        <div class="plan-item morning">
-            <strong>Before Breakfast:</strong> ${beforeBreakfast}
-        </div>
-        <div class="plan-item morning">
-            <strong>After Breakfast:</strong> ${afterBreakfast}
-        </div>
-        <div class="plan-item afternoon">
-            <strong>Before Lunch:</strong> ${beforeLunch}
-        </div>
-        <div class="plan-item afternoon">
-            <strong>After Lunch:</strong> ${afterLunch}
-        </div>
-        <div class="plan-item evening">
-            <strong>Before Dinner:</strong> ${beforeDinner}
-        </div>
-        <div class="plan-item evening">
-            <strong>After Dinner:</strong> ${afterDinner}
-        </div>
+    rows.forEach((row) => {
+        const timeOfDay = row.cells[0].textContent.trim();
+        const activitySelect = row.querySelector('select[id^="activity"]');
+        const activity =
+            activitySelect.value === "Custom"
+                ? row.querySelector('input[id^="custom-activity"]').value
+                : activitySelect.value;
+        const timeSpentSelect = row.querySelector('select[id^="time"]');
+        const timeSpent =
+            timeSpentSelect.value === "Custom"
+                ? row.querySelector('input[id^="custom-time"]').value
+                : timeSpentSelect.value;
+        const moodBeforeSelect = row.querySelector('select[id^="mood-before"]');
+        const moodBefore =
+            moodBeforeSelect.value === "Custom"
+                ? row.querySelector('input[id^="custom-mood-before"]').value
+                : moodBeforeSelect.value;
+        const moodAfterSelect = row.querySelector('select[id^="mood-after"]');
+        const moodAfter =
+            moodAfterSelect.value === "Custom"
+                ? row.querySelector('input[id^="custom-mood-after"]').value
+                : moodAfterSelect.value;
+        const notes = row.querySelector('input[id^="notes"]').value.trim();
+
+        if (activity && timeSpent) {
+            // Track the mood transition for each activity
+            trackMoodTransition(moodBefore, moodAfter);
+            moodChanges.totalActivities++;  // Increment the total activity count
+
+            let planItem = `
+                <div class="plan-item">
+                    <strong>${timeOfDay}:</strong> ${activity} for ${timeSpent} minutes<br>
+                    Mood Before: ${moodBefore}, Mood After: ${moodAfter}<br>
+                    Notes: ${notes}
+                </div>`;
+            planContainer.innerHTML += planItem;
+        }
+    });
+
+    document.getElementById("result").innerHTML = `<h3>Plan for ${currentDate}</h3>`; // Add the current date to the plan
+    document.getElementById("result").appendChild(planContainer);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Generate daily summary at the end of the plan
+    generateSummary(currentDate);
+}
+
+// Function to generate the daily summary
+function generateSummary(currentDate) {
+    let summaryHtml = `
+        <h3>Daily Summary for ${currentDate}</h3>
+        <p>Total Activities: ${moodChanges.totalActivities}</p>
+        <p>Positive to Calm Transitions: ${moodChanges.positiveToCalm}</p>
+        <p>Calm to Positive Transitions: ${moodChanges.calmToPositive}</p>
+        <p>Positive to Negative Transitions: ${moodChanges.positiveToNegative}</p>
+        <p>Calm to Negative Transitions: ${moodChanges.calmToNegative}</p>
+        <p>Negative to Calm Transitions: ${moodChanges.negativeToCalm}</p>
+        <p>Overall Mood Improvement: ${moodChanges.totalMoodImprovement > 0 ? "Positive" : "Neutral/Negative"}</p>
+        <p>Overall Mood Decline: ${moodChanges.totalMoodDecline > 0 ? "Negative" : "Neutral/Positive"}</p>
     `;
+    document.getElementById('daily-summary').innerHTML = summaryHtml;
+}
 
-    const customTimes = document.getElementById('custom-times-container').children;
-    for (let i = 0; i < customTimes.length; i++) {
-        const timeId = `custom-time-${i}`;
-        const activityId = `custom-activity-${i}`;
-        const customTime = document.getElementById(timeId).value;
-        const customActivity = getActivity(activityId);
+// Function to export the plan as a text file
+function exportPlan() {
+    const planContent = document.getElementById("result").innerText;
 
-        plan += `
-            <div class="plan-item custom">
-                <strong>${customTime}:</strong> ${customActivity}
-            </div>
-        `;
+    if (!planContent || planContent.trim() === "") {
+        alert("Please generate a plan first.");
+        return;
     }
 
-    document.getElementById('result').innerHTML = plan;
+    const blob = new Blob([planContent], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = "sensory_diet_plan.txt";
 
-    // Scroll to top of the page to view the generated plan
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+    // Append link to the body (necessary for Firefox)
+    document.body.appendChild(link);
 
-function getActivity(timeOfDay) {
-    const selectElement = document.getElementById(timeOfDay);
-    if (selectElement.value === 'custom') {
-        const customInputElement = document.getElementById(`${timeOfDay}-custom`);
-        return customInputElement.value || 'Custom Activity';
-    }
-    return selectElement.options[selectElement.selectedIndex].text;
-}
+    // Trigger the download by simulating a click
+    link.click();
 
-async function exportToPDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    const plan = document.getElementById('result').innerHTML;
-    doc.fromHTML(plan, 10, 10);
-    doc.save('sensory-diet-plan.pdf');
-}
-
-function importPlan(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const importedPlan = e.target.result;
-            document.getElementById('result').innerHTML = importedPlan;
-        };
-        reader.readAsText(file);
-    }
-}
-
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(error => {
-            console.error('Service Worker registration failed:', error);
-        });
+    // Remove the link after download
+    document.body.removeChild(link);
 }

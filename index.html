@@ -1,134 +1,684 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Sensory Diet Plan Generator</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="/manifest.json">
+  <meta charset="UTF-8">
+  <title>CodePen - OT Environment assignment </title>
+  <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-    <div class="container">
-        <h1>Sensory Diet Plan Generator</h1>
-        <div class="watermark">Zeynep and Alessia</div>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="info-section">
-            <h2>Activity Categories</h2>
-            <div class="category">
-                <h3>Movement (Vestibular)</h3>
-                <p>Activities that involve moving the body in different ways, such as rolling, swinging, and jumping.</p>
-                <ul>
-                    <li>Rolling on Peanut Ball</li>
-                    <li>Swinging</li>
-                    <li>Trampoline Jumping</li>
-                    <li>Dancing</li>
-                    <li>Obstacle Course</li>
-                    <li>Yoga</li>
-                </ul>
-            </div>
-            <div class="category">
-                <h3>Touch (Tactile)</h3>
-                <p>Activities that involve touching and feeling different textures, such as playing with playdough, finger painting, and water play.</p>
-                <ul>
-                    <li>Play with Playdough</li>
-                    <li>Finger Painting</li>
-                    <li>Sensory Bin with Rice</li>
-                    <li>Play with Sand</li>
-                    <li>Play with Slime</li>
-                    <li>Water Play</li>
-                </ul>
-            </div>
-            <div class="category">
-                <h3>Proprioceptive</h3>
-                <p>Activities that involve heavy work or deep pressure, such as jumping jacks, hopping on one foot, and climbing.</p>
-                <ul>
-                    <li>Jumping Jacks</li>
-                    <li>Hopping on One Foot</li>
-                    <li>Push-Ups</li>
-                    <li>Climbing</li>
-                    <li>Wall Pushes</li>
-                    <li>Bear Crawls</li>
-                </ul>
-            </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensory Diet Plan Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        <form id="sensory-form">
-            <label for="age">Select Age Group:</label>
-            <select id="age">
-                <option value="toddler">Toddler</option>
-                <option value="preschooler">Preschooler</option>
-                <option value="school-aged">School-Aged</option>
-            </select>
-            
-            <h3>Choose Activities for Each Time of Day:</h3>
-            <label for="before-breakfast">Before Breakfast:</label>
-            <select id="before-breakfast" class="activity-select" onchange="toggleCustomActivity('before-breakfast')">
-                <option value="movement">Rolling on Peanut Ball</option>
-                <option value="tactile">Play with Playdough</option>
-                <option value="proprioceptive">Jumping Jacks</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="before-breakfast-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      width: 100%;
+    }
 
-            <label for="after-breakfast">After Breakfast:</label>
-            <select id="after-breakfast" class="activity-select" onchange="toggleCustomActivity('after-breakfast')">
-                <option value="movement">Swinging</option>
-                <option value="tactile">Finger Painting</option>
-                <option value="proprioceptive">Hopping on One Foot</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="after-breakfast-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+    h1 {
+      color: #4CAF50;
+      text-align: center;
+    }
 
-            <label for="before-lunch">Before Lunch:</label>
-            <select id="before-lunch" class="activity-select" onchange="toggleCustomActivity('before-lunch')">
-                <option value="movement">Trampoline Jumping</option>
-                <option value="tactile">Sensory Bin with Rice</option>
-                <option value="proprioceptive">Push-Ups</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="before-lunch-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+    .watermark {
+      font-size: 20px;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
 
-            <label for="after-lunch">After Lunch:</label>
-            <select id="after-lunch" class="activity-select" onchange="toggleCustomActivity('after-lunch')">
-                <option value="movement">Dancing</option>
-                <option value="tactile">Play with Sand</option>
-                <option value="proprioceptive">Climbing</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="after-lunch-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+    .info-section {
+      margin-bottom: 30px;
+    }
 
-            <label for="before-dinner">Before Dinner:</label>
-            <select id="before-dinner" class="activity-select" onchange="toggleCustomActivity('before-dinner')">
-                <option value="movement">Obstacle Course</option>
-                <option value="tactile">Play with Slime</option>
-                <option value="proprioceptive">Wall Pushes</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="before-dinner-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+    .info-section h2 {
+      color: #333;
+      text-align: center;
+    }
 
-            <label for="after-dinner">After Dinner:</label>
-            <select id="after-dinner" class="activity-select" onchange="toggleCustomActivity('after-dinner')">
-                <option value="movement">Yoga</option>
-                <option value="tactile">Water Play</option>
-                <option value="proprioceptive">Bear Crawls</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="after-dinner-custom" class="custom-activity-input" placeholder="Enter your custom activity" style="display:none">
+    .category {
+      margin-bottom: 20px;
+    }
 
-            <div id="custom-times-container"></div>
+    .category h3 {
+      color: #4CAF50;
+    }
 
-            <button type="button" onclick="addCustomTime()">Add Custom Time/Event</button>
-            <button type="button" onclick="generatePlan()">Generate Plan</button>
-            <button type="button" onclick="exportToPDF()">Export to PDF</button>
-            <input type="file" id="import-file" style="display:none" onchange="importPlan(event)">
-            <button type="button" onclick="document.getElementById('import-file').click()">Import Plan</button>
-        </form>
+    .category p {
+      margin-bottom: 10px;
+    }
 
-        <h2>Your Sensory Diet Plan</h2>
-        <div id="result" class="plan-container"></div>
+    .category ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .sensory-plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .sensory-plan-table th,
+    .sensory-plan-table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
+
+    .sensory-plan-table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    .sensory-plan-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .sensory-plan-table select,
+    .sensory-plan-table input[type="text"],
+    .sensory-plan-table input[type="number"] {
+      width: 90%;
+      padding: 8px;
+      margin: 4px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .sensory-plan-table button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: block;
+    }
+
+    .sensory-plan-table button:hover {
+      background-color: #45a049;
+    }
+
+    .plan-container {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .plan-item {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 45%;
+      text-align: left;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+    }
+
+    .plan-item strong {
+      font-size: 18px;
+      color: #4CAF50;
+    }
+
+    .plan-item p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .plan-item .mood,
+    .plan-item .notes {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .plan-item .time-spent {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .custom-activity-input,
+    .custom-time-input,
+    .custom-mood-input {
+      display: none;
+      margin-top: 5px;
+    }
+
+    .notes-input {
+      width: 100%;
+      height: 50px;
+      resize: none;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .popup-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    #close-popup {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #close-popup:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sensory Diet Plan Generator</h1>
+    <div class="watermark">Zeynep and Alessia</div>
+
+    <div class="info-section">
+      <h2>What is Sensory Processing?</h2>
+      <p>
+        Sensory processing refers to the way the nervous system receives, organizes, and interprets sensory information. It is the mechanism by which we understand and respond to sensory input from our environment. The human body has several senses, each responsible for different types of sensory input.
+      </p>
+      <div class="category">
+        <h3>Hearing (Auditory)</h3>
+        <p>
+          Over-sensitive: Some kids might find certain sounds too loud or overwhelming, like alarms or busy places. They might cover their ears or avoid noisy environments.<br>
+          Under-sensitive: Other kids might not notice sounds easily or might enjoy making loud noises themselves, like shouting or listening to music loudly.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Sight (Visual)</h3>
+        <p>
+          Over-sensitive: Bright lights or fast-moving things can be too much for some kids. They might avoid looking directly at lights or prefer dimly lit rooms.<br>
+          Under-sensitive: Some kids might enjoy watching spinning objects or bright, colorful lights and seek them out.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Taste (Gustatory)</h3>
+        <p>
+          Over-sensitive: Some kids are picky eaters and might not like certain food textures or strong flavors like spicy or sour foods.<br>
+          Under-sensitive: Other kids might love very strong flavors and might chew on things that aren’t food.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Smell (Olfactory)</h3>
+        <p>
+          Over-sensitive: Strong smells, like perfumes or certain foods, can be overwhelming for some kids, making them feel uncomfortable or even sick.<br>
+          Under-sensitive: Some kids might not notice strong smells at all, or they might enjoy sniffing things like scented candles or lotions.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Internal Body Awareness (Interoception)</h3>
+        <p>
+          Over-sensitive: Kids might be very aware of feelings like hunger or the need to use the bathroom, which could make them anxious.<br>
+          Under-sensitive: Some kids might not realize when they’re hungry or need to go to the bathroom, leading to accidents or discomfort.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Temperature Sensitivity (Thermoception)</h3>
+        <p>
+          Over-sensitive: Some kids might feel too hot or too cold very easily and be very picky about what clothes they wear.<br>
+          Under-sensitive: Other kids might not notice when it’s cold or hot and might not dress appropriately for the weather.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Pain Sensitivity (Nociception)</h3>
+        <p>
+          Over-sensitive: Small bumps or scrapes might feel very painful to some kids, causing them to react strongly.<br>
+          Under-sensitive: Other kids might not notice pain as much and could ignore injuries, which might lead to unnoticed problems.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Oral Sensory (Mouth Sensitivity)</h3>
+        <p>
+          Over-sensitive: Some kids might not like certain textures in their mouth, like crunchy or mushy foods, and might avoid brushing their teeth.<br>
+          Under-sensitive: Other kids might like chewing on things like their clothes, pencils, or toys to get extra oral stimulation.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Gravitational Insecurity (Movement/Vestibular)</h3>
+        <p>
+          Over-sensitive: Some kids might be afraid of activities where their feet leave the ground, like jumping, climbing, or swinging.<br>
+          Under-sensitive: Other kids might love intense movement, such as spinning, jumping, or climbing, and seek out these activities.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Body Awareness (Proprioception)</h3>
+        <p>
+          Over-sensitive: Some kids might feel uncomfortable or disoriented by certain movements, such as being lifted or moved suddenly.<br>
+          Under-sensitive: Other kids might not be aware of their own strength and might bump into things, press too hard when writing, or enjoy heavy work activities like pushing or pulling objects.
+        </p>
+      </div>
+      <div class="category">
+        <h3>Touch Sensitivity (Tactile)</h3>
+        <p>
+          Over-sensitive: Some kids might find certain textures uncomfortable or even painful, like scratchy clothes, sticky hands, or light touches. They might avoid messy play or dislike being touched.<br>
+          Under-sensitive: Other kids might seek out touch sensations, such as rubbing their hands on different textures, or they might not notice when their hands or face are dirty.
+        </p>
+      </div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <div class="info-section">
+      <h2>What is a Sensory Diet?</h2>
+      <p>
+        A sensory diet aims to use a mix of sensory activities that meet their sensory-processing challenges for regulating and reducing over-responsivity or under-responsivity by providing sensory input. Every child has different challenges, and as occupational therapists, we work with children and their families to tailor their responses. For example, children with sensory processing difficulties may struggle with everyday sensory input like sounds, textures, and movements that can either overwhelm or underwhelm them. A sensory diet helps them regulate their responses, making focusing, learning, and interacting with others easier.
+      </p>
+      <p>
+        To understand a child’s sensory needs, imagine a time when you were at work, and you had a busy morning by lunch, you are tired and distracted. To help you get through the rest of your day, you might need a break to go for a walk, or have a cup of tea or listen to music. These activities are similar to sensory activities your child might need to reset and refocus.
+      </p>
+    </div>
+
+    <div class="info-section">
+      <h2>Does Your Child Have Sensory-Processing Challenges?</h2>
+      <p>
+        Sensory needs can manifest in different behaviors in children. They can sometimes look like:
+      </p>
+      <ul>
+        <li>Playing rough</li>
+        <li>Increased movement like jumping, spinning, swinging, rocking, fidgeting or crashing into things</li>
+        <li>Prone to running into things or clumsiness</li>
+        <li>Biting or chewing non-food items</li>
+        <li>Refusing to wear certain clothing items because they are uncomfortable</li>
+        <li>Refusing to eat certain foods</li>
+        <li>Reacts strongly to loud noises like covering their ears when the blowdryer is on</li>
+        <li>Licking hands</li>
+        <li>Thinking the lights seem too bright</li>
+        <li>Thinking the sounds seem too loud</li>
+        <li>Thinking the soft touches feel too hard</li>
+        <li>Experience food textures that make them gag</li>
+        <li>Have poor balance or seem clumsy</li>
+      </ul>
+    </div>
+
+    <div class="info-section">
+      <h2>What Are the Benefits of Using a Sensory Diet Plan?</h2>
+      <ul>
+        <li>Provides necessary sensory input to help maintain attention during tasks.</li>
+        <li>Reduces distraction.</li>
+        <li>Decreases frequency and intensity of meltdowns and tantrums.</li>
+        <li>Helps manage hyperactivity and impulsivity.</li>
+        <li>Improves attention and focus.</li>
+        <li>Promotes calmness and relaxation.</li>
+      </ul>
+    </div>
+
+    <div class="info-section">
+      <h2>Instructions to Use Sensory Diet Plan Generator</h2>
+      <ul>
+        <li>The table represents one day's worth of activities divided into times when your child may need sensory input.</li>
+        <li>Every day, you will follow this schedule of activities to keep a consistent routine.</li>
+        <li>Note your child’s mood before and after the activity. If they feel cranky and irritable while crashing into walls, even after the activity, it could mean it may not be enough to meet their needs and may need to be changed.</li>
+        <li>Monitor the amount of time spent doing the activity. This helps ensure the need is met and also shows whether your child enjoys or is engaged in this activity.</li>
+        <li>Use the notes section to add any additional comments or concerns about the activity or the child's response and behavior.</li>
+        <li>Keep the schedule with pictures in a space where you and your child can easily see it, such as on your refrigerator, so that you can both incorporate it into your everyday routine.</li>
+      </ul>
+    </div>
+
+    <h2>Your Sensory Diet Plan</h2>
+    <table class="sensory-plan-table">
+      <thead>
+        <tr>
+          <th>Time of Day</th>
+          <th>Activity</th>
+          <th>Length of Time (minutes)</th>
+          <th>Child’s Mood Before Activity</th>
+          <th>Child’s Mood After Activity</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="width: 15%;">Waking up</td>
+          <td style="width: 25%;">
+            <select id="activity-wake">
+              <option value="Rolling on Peanut Ball">Rolling on Peanut Ball</option>
+              <option value="Swinging">Swinging</option>
+              <option value="Trampoline Jumping">Trampoline Jumping</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" class="custom-activity-input" id="custom-activity-wake" placeholder="Enter custom activity" style="display:none;">
+          </td>
+          <td style="width: 20%;">
+            <select id="time-wake" onchange="toggleCustomTime('wake')">
+              <option value="5">5 mins</option>
+              <option value="10">10 mins</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="number" id="custom-time-wake" class="custom-time-input" placeholder="Enter custom time in minutes">
+          </td>
+          <td style="width: 20%;">
+            <select id="mood-before-wake" onchange="toggleCustomMood('before-wake')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-before-wake" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td style="width: 20%;">
+            <select id="mood-after-wake" onchange="toggleCustomMood('after-wake')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-after-wake" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td style="width: 25%;"><input type="text" id="notes-wake" class="notes-input" placeholder="Notes"></td>
+        </tr>
+        <tr>
+          <td>Mid morning</td>
+          <td>
+            <select id="activity-morning">
+              <option value="Play with Playdough">Play with Playdough</option>
+              <option value="Finger Painting">Finger Painting</option>
+              <option value="Sensory Bin with Rice">Sensory Bin with Rice</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" class="custom-activity-input" id="custom-activity-morning" placeholder="Enter custom activity" style="display:none;">
+          </td>
+          <td>
+            <select id="time-morning" onchange="toggleCustomTime('morning')">
+              <option value="5">5 mins</option>
+              <option value="10">10 mins</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="number" id="custom-time-morning" class="custom-time-input" placeholder="Enter custom time in minutes">
+          </td>
+          <td>
+            <select id="mood-before-morning" onchange="toggleCustomMood('before-morning')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-before-morning" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td>
+            <select id="mood-after-morning" onchange="toggleCustomMood('after-morning')">
+              <option value="Postive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-after-morning" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td><input type="text" id="notes-morning" class="notes-input" placeholder="Notes"></td>
+        </tr>
+        <tr>
+          <td>Before lunch</td>
+          <td>
+            <select id="activity-lunch">
+              <option value="Obstacle Course">Obstacle Course</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Water Play">Water Play</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" class="custom-activity-input" id="custom-activity-lunch" placeholder="Enter custom activity" style="display:none;">
+          </td>
+          <td>
+            <select id="time-lunch" onchange="toggleCustomTime('lunch')">
+              <option value="5">5 mins</option>
+              <option value="10">10 mins</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="number" id="custom-time-lunch" class="custom-time-input" placeholder="Enter custom time in minutes">
+          </td>
+          <td>
+            <select id="mood-before-lunch" onchange="toggleCustomMood('before-lunch')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-before-lunch" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td>
+            <select id="mood-after-lunch" onchange="toggleCustomMood('after-lunch')">
+              <option value="Postive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-after-lunch" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td><input type="text" id="notes-lunch" class="notes-input" placeholder="Notes"></td>
+        </tr>
+        <tr>
+          <td>After lunch</td>
+          <td>
+            <select id="activity-after-lunch">
+              <option value="Obstacle Course">Obstacle Course</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Water Play">Water Play</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" class="custom-activity-input" id="custom-activity-after-lunch" placeholder="Enter custom activity" style="display:none;">
+          </td>
+          <td>
+            <select id="time-after-lunch" onchange="toggleCustomTime('after-lunch')">
+              <option value="5">5 mins</option>
+              <option value="10">10 mins</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="number" id="custom-time-after-lunch" class="custom-time-input" placeholder="Enter custom time in minutes">
+          </td>
+          <td>
+            <select id="mood-before-after-lunch" onchange="toggleCustomMood('before-after-lunch')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-before-after-lunch" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td>
+            <select id="mood-after-after-lunch" onchange="toggleCustomMood('after-after-lunch')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-after-after-lunch" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td><input type="text" id="notes-after-lunch" class="notes-input" placeholder="Notes"></td>
+        </tr>
+        <tr>
+          <td>Before dinner</td>
+          <td>
+            <select id="activity-before-dinner">
+              <option value="Obstacle Course">Obstacle Course</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Water Play">Water Play</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" class="custom-activity-input" id="custom-activity-before-dinner" placeholder="Enter custom activity" style="display:none;">
+          </td>
+          <td>
+            <select id="time-before-dinner" onchange="toggleCustomTime('before-dinner')">
+              <option value="5">5 mins</option>
+              <option value="10">10 mins</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="number" id="custom-time-before-dinner" class="custom-time-input" placeholder="Enter custom time in minutes">
+          </td>
+          <td>
+            <select id="mood-before-before-dinner" onchange="toggleCustomMood('before-before-dinner')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-before-before-dinner" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td>
+            <select id="mood-after-before-dinner" onchange="toggleCustomMood('after-before-dinner')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-after-before-dinner" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td><input type="text" id="notes-before-dinner" class="notes-input" placeholder="Notes"></td>
+        </tr>
+        <tr>
+          <td>After dinner</td>
+          <td>
+            <select id="activity-after-dinner">
+              <option value="Obstacle Course">Obstacle Course</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Water Play">Water Play</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" class="custom-activity-input" id="custom-activity-after-dinner" placeholder="Enter custom activity" style="display:none;">
+          </td>
+          <td>
+            <select id="time-after-dinner" onchange="toggleCustomTime('after-dinner')">
+              <option value="5">5 mins</option>
+              <option value="10">10 mins</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="number" id="custom-time-after-dinner" class="custom-time-input" placeholder="Enter custom time in minutes">
+          </td>
+          <td>
+            <select id="mood-before-after-dinner" onchange="toggleCustomMood('before-after-dinner')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-before-after-dinner" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td>
+            <select id="mood-after-after-dinner" onchange="toggleCustomMood('after-after-dinner')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-after-after-dinner" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td><input type="text" id="notes-after-dinner" class="notes-input" placeholder="Notes"></td>
+        </tr>
+        <tr>
+          <td>Before sleep</td>
+          <td>
+            <select id="activity-sleep">
+              <option value="Obstacle Course">Obstacle Course</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Water Play">Water Play</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" class="custom-activity-input" id="custom-activity-sleep" placeholder="Enter custom activity" style="display:none;">
+          </td>
+          <td>
+            <select id="time-sleep" onchange="toggleCustomTime('sleep')">
+              <option value="5">5 mins</option>
+              <option value="10">10 mins</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="number" id="custom-time-sleep" class="custom-time-input" placeholder="Enter custom time in minutes">
+          </td>
+          <td>
+            <select id="mood-before-sleep" onchange="toggleCustomMood('before-sleep')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-before-sleep" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td>
+            <select id="mood-after-sleep" onchange="toggleCustomMood('after-sleep')">
+              <option value="Positive">Positive</option>
+              <option value="Calm">Calm</option>
+              <option value="Negative">Negative</option>
+              <option value="Custom">Custom...</option>
+            </select>
+            <input type="text" id="custom-mood-after-sleep" class="custom-mood-input" placeholder="Enter custom mood">
+          </td>
+          <td><input type="text" id="notes-sleep" class="notes-input" placeholder="Notes"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" onclick="generatePlan()">Generate Plan</button>
+    <button type="button" onclick="exportPlan()">Export Plan</button>
+
+    <div id="result"></div>
+
+
+  <div id="disclaimer-popup" class="popup">
+    <div class="popup-content">
+      <p>This website is designed to provide educational resources and assistive tools for caregivers and individuals working with children who have Autism Spectrum Disorder (ASD). While we strive to provide accurate and helpful information, the resources provided here are not intended to replace professional advice or consultation. Users should consult with a qualified professional for personalised guidance and support.</p>
+      <button id="close-popup" onclick="closePopup()">I Understand</button>
+    </div>
+  </div>
+<div id="daily-summary" style="margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+    <!-- The summary will be generated here -->
+</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
 </body>
 </html>
