@@ -14,8 +14,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
     flex-grow: 1;
 }
 
@@ -36,35 +36,37 @@ p, ul {
 
 /* Sidebar Styles */
 nav {
-    width: 200px;
+    width: 220px;
     background-color: #4caf50;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
+    overflow-y: auto;
 }
 
 nav a {
     color: white;
     display: block;
     text-decoration: none;
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 18px;
     text-align: left;
 }
 
 nav a:hover {
     background-color: #45a049;
-    padding-left: 10px;
+    padding-left: 15px;
     transition: padding-left 0.3s ease-in-out;
 }
-/* Ensure this matches the width of the sidebar + its padding */
+
 .container {
-    margin-left: 210px; 
+    margin-left: 260px; /* Adjusted to match the sidebar width */
     flex-grow: 1;
+    padding-top: 20px; /* Additional padding to enhance spacing */
 }
 
 /* Ensure links within the container are styled properly */
@@ -82,7 +84,7 @@ nav a:hover {
 /* Info Section Styles */
 .info-section {
     background-color: #f1f1f1;
-    padding: 15px;
+    padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
 }
@@ -103,6 +105,7 @@ nav a:hover {
         position: relative;
         height: auto;
         padding: 10px;
+        overflow-y: visible; /* Disable overflow for smaller screens */
     }
 
     .container {
