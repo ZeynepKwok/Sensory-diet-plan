@@ -156,6 +156,7 @@ button:hover {
 .custom-time-row button:hover {
   background-color: #ff1a1a;
 }
+
 /* Popup background */
 .popup {
   display: none; /* Hidden by default */
@@ -196,6 +197,7 @@ button:hover {
 #close-popup:hover {
   background-color: #45a049;
 }
+
 /* Style for the generated plan */
 .plan-container {
   margin-top: 20px;
@@ -237,101 +239,4 @@ button:hover {
   font-size: 16px;
   font-weight: bold;
   margin-top: 10px;
-}
-/* Adjust the size of the notes input */
-.notes-input {
-  width: 100%;
-  height: 50px;
-  resize: none;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-/* Style for the generated plan */
-.plan-container {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.plan-item {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 45%; /* Adjust to fill the space better */
-  text-align: left;
-  font-family: "Arial", sans-serif;
-  color: #333;
-}
-
-.plan-item strong {
-  font-size: 18px;
-  color: #4caf50;
-}
-
-.plan-item p {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-.plan-item .mood,
-.plan-item .notes {
-  font-size: 14px;
-  color: #555;
-}
-
-.plan-item .time-spent {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-.plan-container {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* Adjust to center the plan items */
-  align-items: stretch;
-}
-/* Styles for the pop-up disclaimer */
-.popup {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
-}
-
-.popup-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-#close-popup {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#close-popup:hover {
-    background-color: #45a049;
 }
