@@ -1,74 +1,156 @@
+/* Global Styles */
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
+    font-family: "Arial", sans-serif;
+    background-color: #f9f9f9;
     margin: 0;
-    padding: 0;
-    color: #333;
-    line-height: 1.6;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
+    background-color: #ffffff;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
 }
 
+/* Navigation Styles */
+nav {
+    background-color: #4CAF50;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #d4d4d4;
+}
+
+/* Header and Section Styles */
 h1, h2, h3 {
     color: #4CAF50;
-    margin-bottom: 20px;
-}
-
-p, ul {
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-.nav {
-    background-color: #4CAF50;
-    padding: 10px 0;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 0;
 }
 
-.nav a {
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.nav a:hover {
-    background-color: #45a049;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.button:hover {
-    background-color: #45a049;
-}
-
-.info-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.info-section h2 {
+p {
+    line-height: 1.6;
     color: #333;
 }
 
+/* Info Section Styles */
+.info-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+.sensory-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.sensory-plan-table th,
+.sensory-plan-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.sensory-plan-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sensory-plan-table td select,
+.sensory-plan-table td input[type="text"],
+.sensory-plan-table td input[type="number"] {
+    width: 90%;
+    padding: 8px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#close-popup {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#close-popup:hover {
+    background-color: #45a049;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
