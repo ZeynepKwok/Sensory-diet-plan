@@ -323,7 +323,7 @@ button:hover {
 }
 
 .container {
-    margin-left: 220px; /* Same as the width of the sidebar */
+    margin-left: 210px; /* Same as the width of the sidebar */
     padding: 20px;
 }
 
