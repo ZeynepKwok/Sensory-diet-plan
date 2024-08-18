@@ -189,3 +189,12 @@ function exportPlan() {
     // Remove the link after download
     document.body.removeChild(link);
 }
+// Show the popup when the page loads
+window.onload = function () {
+    document.getElementById("disclaimer-popup").style.display = "block";
+};
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("disclaimer-popup").style.display = "none";
+}
