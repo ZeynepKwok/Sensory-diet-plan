@@ -1,4 +1,3 @@
-
 :root {
   --accent-color: #fff;
   --gradient-color: #FBFBFB;
@@ -141,8 +140,10 @@ label #cancel {
     visibility: visible;
   }
 }
+
 .container {
   margin-left: 260px; /* Adjust this to match the sidebar width */
   padding: 20px;
   max-width: calc(100% - 260px); /* Ensure it doesn't exceed the viewable area */
 }
+
