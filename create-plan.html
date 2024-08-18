@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Sensory Diet Plan</title>
     <style>
-        /* Same CSS as before */
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
@@ -171,262 +170,166 @@
                             <input type="text" class="custom-activity-input" id="custom-activity-wake" placeholder="Enter custom activity" style="display:none;">
                         </td>
                         <td>
-                            <select id="time-wake" onchange="toggleCustomTime('wake')">
+                            <select id="time-wake">
                                 <option value="5">5 mins</option>
                                 <option value="10">10 mins</option>
                                 <option value="Custom">Custom...</option>
                             </select>
                             <input type="number" id="custom-time-wake" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
                         </td>
-                        <td>
-                            <select id="mood-before-wake">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="mood-after-wake">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
+                        <td><select id="mood-before-wake"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                        <td><select id="mood-after-wake"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
                         <td><input type="text" id="notes-wake" class="notes-input" placeholder="Notes"></td>
                     </tr>
-                    <!-- Mid Morning -->
-                    <tr>
-                        <td>Mid morning</td>
-                        <td>
-                            <select id="activity-morning" onchange="toggleCustomActivity('morning')">
-                                <option value="Play with Playdough">Play with Playdough</option>
-                                <option value="Finger Painting">Finger Painting</option>
-                                <option value="Sensory Bin with Rice">Sensory Bin with Rice</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="text" class="custom-activity-input" id="custom-activity-morning" placeholder="Enter custom activity" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="time-morning" onchange="toggleCustomTime('morning')">
-                                <option value="5">5 mins</option>
-                                <option value="10">10 mins</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="number" id="custom-time-morning" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="mood-before-morning">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="mood-after-morning">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td><input type="text" id="notes-morning" class="notes-input" placeholder="Notes"></td>
-                    </tr>
-                    <!-- Add more rows similarly -->
-                    
-                    <!-- Before Lunch -->
-                    <tr>
-                        <td>Before lunch</td>
-                        <td>
-                            <select id="activity-lunch" onchange="toggleCustomActivity('lunch')">
-                                <option value="Obstacle Course">Obstacle Course</option>
-                                <option value="Yoga">Yoga</option>
-                                <option value="Water Play">Water Play</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="text" class="custom-activity-input" id="custom-activity-lunch" placeholder="Enter custom activity" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="time-lunch" onchange="toggleCustomTime('lunch')">
-                                <option value="5">5 mins</option>
-                                <option value="10">10 mins</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="number" id="custom-time-lunch" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="mood-before-lunch">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="mood-after-lunch">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td><input type="text" id="notes-lunch" class="notes-input" placeholder="Notes"></td>
-                    </tr>
-                    <!-- After Lunch -->
-                    <tr>
-                        <td>After lunch</td>
-                        <td>
-                            <select id="activity-after-lunch" onchange="toggleCustomActivity('after-lunch')">
-                                <option value="Obstacle Course">Obstacle Course</option>
-                                <option value="Yoga">Yoga</option>
-                                <option value="Water Play">Water Play</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="text" class="custom-activity-input" id="custom-activity-after-lunch" placeholder="Enter custom activity" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="time-after-lunch" onchange="toggleCustomTime('after-lunch')">
-                                <option value="5">5 mins</option>
-                                <option value="10">10 mins</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="number" id="custom-time-after-lunch" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="mood-before-after-lunch">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="mood-after-after-lunch">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td><input type="text" id="notes-after-lunch" class="notes-input" placeholder="Notes"></td>
-                    </tr>
-                    <!-- Before Dinner -->
-                    <tr>
-                        <td>Before dinner</td>
-                        <td>
-                            <select id="activity-before-dinner" onchange="toggleCustomActivity('before-dinner')">
-                                <option value="Obstacle Course">Obstacle Course</option>
-                                <option value="Yoga">Yoga</option>
-                                <option value="Water Play">Water Play</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="text" class="custom-activity-input" id="custom-activity-before-dinner" placeholder="Enter custom activity" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="time-before-dinner" onchange="toggleCustomTime('before-dinner')">
-                                <option value="5">5 mins</option>
-                                <option value="10">10 mins</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="number" id="custom-time-before-dinner" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="mood-before-before-dinner">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="mood-after-before-dinner">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td><input type="text" id="notes-before-dinner" class="notes-input" placeholder="Notes"></td>
-                    </tr>
-                    <!-- After Dinner -->
-                    <tr>
-                        <td>After dinner</td>
-                        <td>
-                            <select id="activity-after-dinner" onchange="toggleCustomActivity('after-dinner')">
-                                <option value="Obstacle Course">Obstacle Course</option>
-                                <option value="Yoga">Yoga</option>
-                                <option value="Water Play">Water Play</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="text" class="custom-activity-input" id="custom-activity-after-dinner" placeholder="Enter custom activity" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="time-after-dinner" onchange="toggleCustomTime('after-dinner')">
-                                <option value="5">5 mins</option>
-                                <option value="10">10 mins</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="number" id="custom-time-after-dinner" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="mood-before-after-dinner">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="mood-after-after-dinner">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td><input type="text" id="notes-after-dinner" class="notes-input" placeholder="Notes"></td>
-                    </tr>
-                    <!-- Before Sleep -->
-                    <tr>
-                        <td>Before sleep</td>
-                        <td>
-                            <select id="activity-sleep" onchange="toggleCustomActivity('sleep')">
-                                <option value="Obstacle Course">Obstacle Course</option>
-                                <option value="Yoga">Yoga</option>
-                                <option value="Water Play">Water Play</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="text" class="custom-activity-input" id="custom-activity-sleep" placeholder="Enter custom activity" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="time-sleep" onchange="toggleCustomTime('sleep')">
-                                <option value="5">5 mins</option>
-                                <option value="10">10 mins</option>
-                                <option value="Custom">Custom...</option>
-                            </select>
-                            <input type="number" id="custom-time-sleep" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
-                        </td>
-                        <td>
-                            <select id="mood-before-sleep">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="mood-after-sleep">
-                                <option value="Positive">Positive</option>
-                                <option value="Calm">Calm</option>
-                                <option value="Neutral">Neutral</option>
-                                <option value="Negative">Negative</option>
-                            </select>
-                        </td>
-                        <td><input type="text" id="notes-sleep" class="notes-input" placeholder="Notes"></td>
-                    </tr>
+                  <!-- Mid Morning -->
+                  <tr>
+                    <td>Mid morning</td>
+                    <td>
+                        <select id="activity-morning" onchange="toggleCustomActivity('morning')">
+                            <option value="Play with Playdough">Play with Playdough</option>
+                            <option value="Finger Painting">Finger Painting</option>
+                            <option value="Sensory Bin with Rice">Sensory Bin with Rice</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="text" class="custom-activity-input" id="custom-activity-morning" placeholder="Enter custom activity" style="display:none;">
+                    </td>
+                    <td>
+                        <select id="time-morning">
+                            <option value="5">5 mins</option>
+                            <option value="10">10 mins</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="number" id="custom-time-morning" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
+                    </td>
+                    <td><select id="mood-before-morning"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><select id="mood-after-morning"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><input type="text" id="notes-morning" class="notes-input" placeholder="Notes"></td>
+                </tr>
 
+                <!-- Before Lunch -->
+                <tr>
+                    <td>Before lunch</td>
+                    <td>
+                        <select id="activity-lunch" onchange="toggleCustomActivity('lunch')">
+                            <option value="Obstacle Course">Obstacle Course</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Water Play">Water Play</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="text" class="custom-activity-input" id="custom-activity-lunch" placeholder="Enter custom activity" style="display:none;">
+                    </td>
+                    <td>
+                        <select id="time-lunch">
+                            <option value="5">5 mins</option>
+                            <option value="10">10 mins</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="number" id="custom-time-lunch" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
+                    </td>
+                    <td><select id="mood-before-lunch"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><select id="mood-after-lunch"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><input type="text" id="notes-lunch" class="notes-input" placeholder="Notes"></td>
+                </tr>
+
+                <!-- After Lunch -->
+                <tr>
+                    <td>After lunch</td>
+                    <td>
+                        <select id="activity-after-lunch" onchange="toggleCustomActivity('after-lunch')">
+                            <option value="Obstacle Course">Obstacle Course</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Water Play">Water Play</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="text" class="custom-activity-input" id="custom-activity-after-lunch" placeholder="Enter custom activity" style="display:none;">
+                    </td>
+                    <td>
+                        <select id="time-after-lunch">
+                            <option value="5">5 mins</option>
+                            <option value="10">10 mins</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="number" id="custom-time-after-lunch" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
+                    </td>
+                    <td><select id="mood-before-after-lunch"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><select id="mood-after-after-lunch"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><input type="text" id="notes-after-lunch" class="notes-input" placeholder="Notes"></td>
+                </tr>
+
+                <!-- Before Dinner -->
+                <tr>
+                    <td>Before dinner</td>
+                    <td>
+                        <select id="activity-before-dinner" onchange="toggleCustomActivity('before-dinner')">
+                            <option value="Obstacle Course">Obstacle Course</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Water Play">Water Play</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="text" class="custom-activity-input" id="custom-activity-before-dinner" placeholder="Enter custom activity" style="display:none;">
+                    </td>
+                    <td>
+                        <select id="time-before-dinner">
+                            <option value="5">5 mins</option>
+                            <option value="10">10 mins</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="number" id="custom-time-before-dinner" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
+                    </td>
+                    <td><select id="mood-before-before-dinner"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><select id="mood-after-before-dinner"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><input type="text" id="notes-before-dinner" class="notes-input" placeholder="Notes"></td>
+                </tr>
+
+                <!-- After Dinner -->
+                <tr>
+                    <td>After dinner</td>
+                    <td>
+                        <select id="activity-after-dinner" onchange="toggleCustomActivity('after-dinner')">
+                            <option value="Obstacle Course">Obstacle Course</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Water Play">Water Play</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="text" class="custom-activity-input" id="custom-activity-after-dinner" placeholder="Enter custom activity" style="display:none;">
+                    </td>
+                    <td>
+                        <select id="time-after-dinner">
+                            <option value="5">5 mins</option>
+                            <option value="10">10 mins</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="number" id="custom-time-after-dinner" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
+                    </td>
+                    <td><select id="mood-before-after-dinner"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><select id="mood-after-after-dinner"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><input type="text" id="notes-after-dinner" class="notes-input" placeholder="Notes"></td>
+                </tr>
+
+                <!-- Before Sleep -->
+                <tr>
+                    <td>Before sleep</td>
+                    <td>
+                        <select id="activity-sleep" onchange="toggleCustomActivity('sleep')">
+                            <option value="Obstacle Course">Obstacle Course</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Water Play">Water Play</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="text" class="custom-activity-input" id="custom-activity-sleep" placeholder="Enter custom activity" style="display:none;">
+                    </td>
+                    <td>
+                        <select id="time-sleep">
+                            <option value="5">5 mins</option>
+                            <option value="10">10 mins</option>
+                            <option value="Custom">Custom...</option>
+                        </select>
+                        <input type="number" id="custom-time-sleep" class="custom-time-input" placeholder="Enter custom time in minutes" style="display:none;">
+                    </td>
+                    <td><select id="mood-before-sleep"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><select id="mood-after-sleep"><option value="Positive">Positive</option><option value="Calm">Calm</option><option value="Negative">Negative</option></select></td>
+                    <td><input type="text" id="notes-sleep" class="notes-input" placeholder="Notes"></td>
+                </tr>
                 </tbody>
             </table>
             <button type="button" onclick="generatePlan()">Generate Plan</button>
@@ -494,6 +397,18 @@
         // Close the popup when the user clicks the button
         function closePopup() {
             document.getElementById("disclaimer-popup").style.display = "none";
+        }
+
+        // Export the generated plan as a text file
+        function exportPlan() {
+            const planContent = document.getElementById("result").innerText;
+            const blob = new Blob([planContent], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "sensory_diet_plan.txt";
+            link.click();
+            URL.revokeObjectURL(url);
         }
     </script>
 </body>
