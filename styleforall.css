@@ -1,80 +1,118 @@
-/* Global Styles */
+
+/* Universal Styles */
 body {
     font-family: "Arial", sans-serif;
     background-color: #f9f9f9;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    display: flex;
+    height: 100vh;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* Container for the whole content */
 .container {
-    display: flex;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* Sidebar Navigation Styles */
-nav {
-    flex: 1;
-    max-width: 200px;
-    background-color: #4CAF50;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    margin: 10px 0;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-nav a:hover {
-    color: #d4d4d4;
-}
-
-/* Main Content Styles */
-.main-content {
-    flex: 3;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px;
+    flex-grow: 1;
 }
 
-h1, h2, h3 {
-    color: #4CAF50;
-    margin-top: 0;
+h1 {
+    color: #4caf50;
     text-align: center;
 }
 
-p {
-    line-height: 1.6;
+h2 {
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+p, ul {
     color: #333;
+    line-height: 1.6;
+}
+
+/* Sidebar Styles */
+nav {
+    width: 200px;
+    background-color: #4caf50;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+nav a:hover {
+    background-color: #45a049;
+    padding-left: 10px;
+    transition: padding-left 0.3s ease-in-out;
+}
+
+.container {
+    margin-left: 220px; /* Ensure this matches the width of the sidebar + its padding */
+    flex-grow: 1;
+}
+
+/* Ensure links within the container are styled properly */
+.container a {
+    color: #4caf50;
+    text-decoration: none;
+    border-bottom: 1px solid #4caf50;
+}
+
+.container a:hover {
+    color: #388e3c;
+    border-bottom: 1px solid #388e3c;
 }
 
 /* Info Section Styles */
 .info-section {
-    margin-bottom: 30px;
-    padding: 20px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 20px;
     border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #777;
+.info-section h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.info-section p {
+    font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 10px;
+    }
+
+    .container {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 0;
+    }
 }
