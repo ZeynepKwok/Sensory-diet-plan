@@ -299,4 +299,31 @@ button:hover {
   align-items: stretch;
 }
 
+.sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #4CAF50;
+    padding-top: 20px;
+}
+
+.sidebar nav a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+}
+
+.sidebar nav a:hover {
+    background-color: #45a049;
+}
+
+.container {
+    margin-left: 220px; /* Same as the width of the sidebar */
+    padding: 20px;
+}
 
