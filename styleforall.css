@@ -61,9 +61,9 @@ nav a:hover {
     padding-left: 10px;
     transition: padding-left 0.3s ease-in-out;
 }
-
+/* Ensure this matches the width of the sidebar + its padding */
 .container {
-    margin-left: 220px; /* Ensure this matches the width of the sidebar + its padding */
+    margin-left: 210px; 
     flex-grow: 1;
 }
 
