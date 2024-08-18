@@ -1,85 +1,148 @@
 
-  /* Universal Styles */
+:root {
+  --accent-color: #fff;
+  --gradient-color: #FBFBFB;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  width: calc(100% - 260px); /* Adjust for sidebar width */
-  margin: 20px auto;
-  margin-left: 260px; /* Ensure margin matches sidebar width */
-}
-
-h1, h2 {
-  color: #4caf50;
-  text-align: center;
-}
-
-p, ul {
-  color: #333;
-  line-height: 1.6;
-  margin: 10px 0;
-}
-
-/* Sidebar Styles */
 .sidebar {
-  width: 240px;
   position: fixed;
-  top: 0;
-  left: 0;
+  width: 240px;
+  left: -240px;
   height: 100%;
   background-color: #4CAF50;
-  padding-top: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  transition: all 0.5s ease;
 }
 
-.sidebar nav a {
-  display: block;
-  color: white;
-  padding: 16px;
-  text-decoration: none;
-  font-size: 18px;
+.sidebar header {
+  font-size: 28px;
+  color: #353535;
+  line-height: 70px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  user-select: none;
 }
 
-.sidebar nav a:hover {
-  background-color: #45a049;
+.sidebar a {
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: #353535;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-left: 5px solid transparent;
+  transition: all 0.5s ease;
 }
 
-/* Adjust content to match sidebar */
-.container {
-  margin-left: 260px; /* Ensure margin matches sidebar width */
-  padding: 20px;
+.sidebar a.active,
+.sidebar a:hover {
+  border-left: 5px solid var(--accent-color);
+  color: #fff;
+  background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+.sidebar a i {
+  font-size: 23px;
+  margin-right: 16px;
+}
+
+.sidebar a span {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#check {
+  display: none;
+}
+
+label #btn,
+label #cancel {
+  position: absolute;
+  left: 5px;
+  cursor: pointer;
+  color: #d6adff;
+  border-radius: 5px;
+  margin: 15px 30px;
+  font-size: 29px;
+  background-color: #e8d1ff;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all 0.5s ease;
+}
+
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#check:checked ~ .sidebar {
+  left: 0;
+}
+
+#check:checked ~ label #btn {
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#check:checked ~ label #cancel {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 860px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
   }
 
-  .container {
-    margin-left: 0;
-    margin-top: 20px;
-    width: 100%;
+  header,
+  #btn,
+  #cancel {
+    display: none;
   }
 
-  .sidebar nav a {
-    text-align: left;
-    padding-left: 20px;
+  span {
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .sidebar a {
+    height: 60px;
+  }
+
+  .sidebar a i {
+    margin-left: -10px;
+  }
+
+  a:hover {
+    width: 200px;
+  }
+
+  .sidebar a:hover span {
+    opacity: 1;
+    visibility: visible;
   }
 }
-
+.container {
+  margin-left: 260px; /* Adjust this to match the sidebar width */
+  padding: 20px;
+  max-width: calc(100% - 260px); /* Ensure it doesn't exceed the viewable area */
+}
