@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    min-height: 100vh;
+    flex-direction: column;
     box-sizing: border-box;
 }
 
@@ -17,7 +17,6 @@ body {
     max-width: 1000px;
     margin: 20px auto;
     flex-grow: 1;
-    overflow: hidden;
 }
 
 h1, h2 {
@@ -74,6 +73,7 @@ nav a:hover {
     .container {
         margin-left: 0;
         margin-top: 20px;
+        padding: 10px;
     }
 
     nav a {
