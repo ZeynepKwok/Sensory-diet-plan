@@ -3,19 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <link rel="stylesheet" href="styleforall.css">
+    <title>Page Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 20px auto;
+            flex-grow: 1;
+        }
+
+        h1, h2 {
+            color: #4caf50;
+            text-align: center;
+        }
+
+        p, ul {
+            color: #333;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        /* Sidebar Styles */
+        nav {
+            width: 200px;
+            background-color: #4caf50;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            display: block;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+            padding-left: 15px;
+            transition: padding-left 0.3s ease-in-out;
+        }
+
+        .container {
+            margin-left: 240px; /* Sidebar width + some padding */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .container {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            nav a {
+                font-size: 16px;
+                padding: 8px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-
 <nav>
-    <a href="index.html">Home</a>
-    <a href="happening.html">What Is Happening?</a>
-    <a href="why.html">Why Does This Happen?</a>
-    <a href="support.html">What Should I Do?</a>
-    <a href="sensory-diet.html">What Is a Sensory Diet Plan?</a>
-    <a href="create-plan.html">Create My Sensory Diet Plan</a>
-    <a href="resources.html">Need More Information?</a>
+   <a href="index.html">Home</a>
+   <a href="happening.html">What Is Happening?</a>
+   <a href="why.html">Why Does This Happen?</a>
+   <a href="support.html">What Should I Do?</a>
+   <a href="sensory-diet.html">What Is a Sensory Diet Plan?</a>
+   <a href="create-plan.html">Create My Sensory Diet Plan</a>
+   <a href="resources.html">Need More Information?</a>
 </nav>
 
 <div class="container">
@@ -29,6 +109,5 @@
         <p>Sensory processing differences occur because the brain processes sensory information in unique ways...</p>
     </div>
 </div>
-
 </body>
 </html>
