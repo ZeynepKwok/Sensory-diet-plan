@@ -17,6 +17,7 @@ body {
     max-width: 1000px;
     margin: 20px auto;
     flex-grow: 1;
+    overflow: hidden;
 }
 
 h1, h2 {
@@ -59,6 +60,7 @@ nav a:hover {
 
 .container {
     margin-left: 240px; /* Sidebar width + some padding */
+    padding-top: 20px;
 }
 
 /* Responsive Styles */
