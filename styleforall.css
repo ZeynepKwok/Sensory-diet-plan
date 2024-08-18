@@ -1,11 +1,11 @@
 /* Universal Styles */
 body {
-    font-family: "Arial", sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
@@ -15,46 +15,40 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 20px auto;
     flex-grow: 1;
 }
 
-h1 {
+h1, h2 {
     color: #4caf50;
     text-align: center;
-}
-
-h2 {
-    color: #4caf50;
-    margin-bottom: 10px;
 }
 
 p, ul {
     color: #333;
     line-height: 1.6;
+    margin: 10px 0;
 }
 
 /* Sidebar Styles */
 nav {
-    width: 220px;
+    width: 200px;
     background-color: #4caf50;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100vh;
-    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
+    bottom: 0;
     overflow-y: auto;
 }
 
 nav a {
     color: white;
-    display: block;
     text-decoration: none;
-    padding: 12px 0;
+    padding: 10px 0;
+    display: block;
     font-size: 18px;
-    text-align: left;
 }
 
 nav a:hover {
@@ -64,48 +58,15 @@ nav a:hover {
 }
 
 .container {
-    margin-left: 260px; /* Adjusted to match the sidebar width */
-    flex-grow: 1;
-    padding-top: 20px; /* Additional padding to enhance spacing */
-}
-
-/* Ensure links within the container are styled properly */
-.container a {
-    color: #4caf50;
-    text-decoration: none;
-    border-bottom: 1px solid #4caf50;
-}
-
-.container a:hover {
-    color: #388e3c;
-    border-bottom: 1px solid #388e3c;
-}
-
-/* Info Section Styles */
-.info-section {
-    background-color: #f1f1f1;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.info-section h2 {
-    font-size: 24px;
-    margin-top: 0;
-}
-
-.info-section p {
-    font-size: 16px;
+    margin-left: 240px; /* Sidebar width + some padding */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav {
         width: 100%;
-        position: relative;
         height: auto;
-        padding: 10px;
-        overflow-y: visible; /* Disable overflow for smaller screens */
+        position: relative;
     }
 
     .container {
@@ -118,4 +79,3 @@ nav a:hover {
         padding: 8px 0;
     }
 }
-
