@@ -5,31 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Is Happening?</title>
     <link rel="stylesheet" href="styleforall.css"> <!-- Link to your main CSS file -->
+    <script>
+        const translations = {
+            "en": {
+                "title": "What Is Happening to My Child?",
+                "understanding": "Understanding Autism and Sensory Sensitivities",
+                "description1": "Autism Spectrum Disorder (ASD) is a developmental condition that affects how a child communicates, interacts with others, and experiences the world. Every child with ASD is unique, with their own strengths and challenges.",
+                "description2": "One common aspect of ASD is sensory sensitivity. This means your child might be overly sensitive (hypersensitive) or under-sensitive (hyposensitive) to certain sensory inputs like sound, touch, taste, or movement. These sensitivities can lead to strong reactions or behaviors that might seem unusual but are completely natural responses to how they perceive the world around them.",
+                "next": "Next: Why Does This Happen?",
+                "backHome": "Back to Home",
+                "home": "Home",
+                "whatIsHappening": "What Is Happening?",
+                "whyDoesThisHappen": "Why Does This Happen?",
+                "whatShouldIDo": "What Should I Do?",
+                "whatIsASensoryDietPlan": "What Is a Sensory Diet Plan?",
+                "createMySensoryDietPlan": "Create My Sensory Diet Plan",
+                "needMoreInformation": "Need More Information?"
+            },
+            "zh": {
+                "title": "我的孩子發生了什麼？",
+                "understanding": "了解自閉症和感覺敏感",
+                "description1": "自閉症譜系障礙 (ASD) 是一種發展性狀況，影響孩子如何與他人溝通、互動和體驗世界。每個有ASD的孩子都是獨特的，他們有自己的優勢和挑戰。",
+                "description2": "ASD的一個常見方面是感覺敏感性。這意味著您的孩子可能對某些感覺輸入（如聲音、觸摸、味道或運動）過度敏感（高敏感）或敏感度不足（低敏感）。這些敏感性可能導致強烈的反應或行為，這些反應或行為可能看起來不尋常，但完全是他們對周圍世界的感知的自然反應。",
+                "next": "下一步：為什麼會這樣？",
+                "backHome": "返回首頁",
+                "home": "首頁",
+                "whatIsHappening": "發生了什麼？",
+                "whyDoesThisHappen": "為什麼會這樣？",
+                "whatShouldIDo": "我應該怎麼做？",
+                "whatIsASensoryDietPlan": "什麼是感覺餐單？",
+                "createMySensoryDietPlan": "創建我的感覺餐單",
+                "needMoreInformation": "需要更多信息？"
+            }
+        };
+
+        function translateContent(lang) {
+            document.getElementById("title").textContent = translations[lang]["title"];
+            document.getElementById("understanding").textContent = translations[lang]["understanding"];
+            document.getElementById("description1").textContent = translations[lang]["description1"];
+            document.getElementById("description2").textContent = translations[lang]["description2"];
+            document.getElementById("next").textContent = translations[lang]["next"];
+            document.getElementById("backHome").textContent = translations[lang]["backHome"];
+            document.getElementById("home").textContent = translations[lang]["home"];
+            document.getElementById("whatIsHappening").textContent = translations[lang]["whatIsHappening"];
+            document.getElementById("whyDoesThisHappen").textContent = translations[lang]["whyDoesThisHappen"];
+            document.getElementById("whatShouldIDo").textContent = translations[lang]["whatShouldIDo"];
+            document.getElementById("whatIsASensoryDietPlan").textContent = translations[lang]["whatIsASensoryDietPlan"];
+            document.getElementById("createMySensoryDietPlan").textContent = translations[lang]["createMySensoryDietPlan"];
+            document.getElementById("needMoreInformation").textContent = translations[lang]["needMoreInformation"];
+        }
+    </script>
 </head>
 <body>
     <div class="sidebar">
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="happening.html" class="active"><i class="fas fa-info-circle"></i> What Is Happening?</a>
-            <a href="why.html"><i class="fas fa-question-circle"></i> Why Does This Happen?</a>
-            <a href="support.html"><i class="fas fa-hands-helping"></i> What Should I Do?</a>
-            <a href="sensory-diet.html"><i class="fas fa-clipboard-list"></i> What Is a Sensory Diet Plan?</a>
-            <a href="create-plan.html"><i class="fas fa-cogs"></i> Create My Sensory Diet Plan</a>
-            <a href="resources.html"><i class="fas fa-book"></i> Need More Information?</a>
+            <a href="index.html"><i class="fas fa-home"></i> <span id="home">Home</span></a>
+            <a href="happening.html" class="active"><i class="fas fa-info-circle"></i> <span id="whatIsHappening">What Is Happening?</span></a>
+            <a href="why.html"><i class="fas fa-question-circle"></i> <span id="whyDoesThisHappen">Why Does This Happen?</span></a>
+            <a href="support.html"><i class="fas fa-hands-helping"></i> <span id="whatShouldIDo">What Should I Do?</span></a>
+            <a href="sensory-diet.html"><i class="fas fa-clipboard-list"></i> <span id="whatIsASensoryDietPlan">What Is a Sensory Diet Plan?</span></a>
+            <a href="create-plan.html"><i class="fas fa-cogs"></i> <span id="createMySensoryDietPlan">Create My Sensory Diet Plan</span></a>
+            <a href="resources.html"><i class="fas fa-book"></i> <span id="needMoreInformation">Need More Information?</span></a>
         </nav>
     </div>
 
     <div class="container">
-        <h2>What Is Happening to My Child?</h2>
-        <p>Understanding Autism and Sensory Sensitivities</p>
-        <p>
+        <!-- Translation buttons -->
+        <button onclick="translateContent('en')">English</button>
+        <button onclick="translateContent('zh')">中文 (繁體)</button>
+
+        <h2 id="title">What Is Happening to My Child?</h2>
+        <p id="understanding">Understanding Autism and Sensory Sensitivities</p>
+        <p id="description1">
             Autism Spectrum Disorder (ASD) is a developmental condition that affects how a child communicates, interacts with others, and experiences the world. Every child with ASD is unique, with their own strengths and challenges.
         </p>
-        <p>
+        <p id="description2">
             One common aspect of ASD is <strong>sensory sensitivity</strong>. This means your child might be overly sensitive (hypersensitive) or under-sensitive (hyposensitive) to certain sensory inputs like sound, touch, taste, or movement. These sensitivities can lead to strong reactions or behaviors that might seem unusual but are completely natural responses to how they perceive the world around them.
         </p>
-        <p><a href="why.html">Next: Why Does This Happen?</a></p>
-        <p><a href="index.html">Back to Home</a></p>
+        <p><a id="next" href="why.html">Next: Why Does This Happen?</a></p>
+        <p><a id="backHome" href="index.html">Back to Home</a></p>
     </div>
 </body>
 </html>
