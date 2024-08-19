@@ -5,28 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources</title>
     <link rel="stylesheet" href="styleforall.css"> <!-- Link to your main CSS file -->
+    <script>
+        const translations = {
+            "en": {
+                "resourcesTitle": "Need More Information?",
+                "intro": "Explore our resources or reach out to a professional.",
+                "faq": "FAQs: Common Questions About Sensory Diets",
+                "contactUs": "Contact Us: Get in Touch with Our Team",
+                "backHome": "Back to Home",
+                "home": "Home",
+                "whatIsHappening": "What Is Happening?",
+                "whyDoesThisHappen": "Why Does This Happen?",
+                "whatShouldIDo": "What Should I Do?",
+                "whatIsASensoryDietPlan": "What Is a Sensory Diet Plan?",
+                "createMySensoryDietPlan": "Create My Sensory Diet Plan",
+                "needMoreInformation": "Need More Information?"
+            },
+            "zh": {
+                "resourcesTitle": "需要更多信息嗎？",
+                "intro": "探索我們的資源或聯繫專業人士。",
+                "faq": "常見問題解答：關於感覺餐單的常見問題",
+                "contactUs": "聯繫我們：與我們的團隊取得聯繫",
+                "backHome": "返回首頁",
+                "home": "首頁",
+                "whatIsHappening": "發生了什麼？",
+                "whyDoesThisHappen": "為什麼會這樣？",
+                "whatShouldIDo": "我應該怎麼做？",
+                "whatIsASensoryDietPlan": "什麼是感覺餐單？",
+                "createMySensoryDietPlan": "創建我的感覺餐單",
+                "needMoreInformation": "需要更多信息？"
+            }
+        };
+
+        function translateContent(lang) {
+            document.getElementById("resourcesTitle").textContent = translations[lang]["resourcesTitle"];
+            document.getElementById("intro").textContent = translations[lang]["intro"];
+            document.getElementById("faq").textContent = translations[lang]["faq"];
+            document.getElementById("contactUs").textContent = translations[lang]["contactUs"];
+            document.getElementById("backHome").textContent = translations[lang]["backHome"];
+            document.getElementById("home").textContent = translations[lang]["home"];
+            document.getElementById("whatIsHappening").textContent = translations[lang]["whatIsHappening"];
+            document.getElementById("whyDoesThisHappen").textContent = translations[lang]["whyDoesThisHappen"];
+            document.getElementById("whatShouldIDo").textContent = translations[lang]["whatShouldIDo"];
+            document.getElementById("whatIsASensoryDietPlan").textContent = translations[lang]["whatIsASensoryDietPlan"];
+            document.getElementById("createMySensoryDietPlan").textContent = translations[lang]["createMySensoryDietPlan"];
+            document.getElementById("needMoreInformation").textContent = translations[lang]["needMoreInformation"];
+        }
+    </script>
 </head>
 <body>
     <div class="sidebar">
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="happening.html"><i class="fas fa-info-circle"></i> What Is Happening?</a>
-            <a href="why.html"><i class="fas fa-question-circle"></i> Why Does This Happen?</a>
-            <a href="support.html"><i class="fas fa-hands-helping"></i> What Should I Do?</a>
-            <a href="sensory-diet.html"><i class="fas fa-clipboard-list"></i> What Is a Sensory Diet Plan?</a>
-            <a href="create-plan.html"><i class="fas fa-cogs"></i> Create My Sensory Diet Plan</a>
-            <a href="resources.html" class="active"><i class="fas fa-book"></i> Need More Information?</a>
+            <a href="index.html"><span id="home">Home</span></a>
+            <a href="happening.html"><span id="whatIsHappening">What Is Happening?</span></a>
+            <a href="why.html"><span id="whyDoesThisHappen">Why Does This Happen?</span></a>
+            <a href="support.html"><span id="whatShouldIDo">What Should I Do?</span></a>
+            <a href="sensory-diet.html"><span id="whatIsASensoryDietPlan">What Is a Sensory Diet Plan?</span></a>
+            <a href="create-plan.html"><span id="createMySensoryDietPlan">Create My Sensory Diet Plan</span></a>
+            <a href="resources.html" class="active"><span id="needMoreInformation">Need More Information?</span></a>
         </nav>
     </div>
 
     <div class="container">
-        <h2>Need More Information?</h2>
-        <p>Explore our resources or reach out to a professional.</p>
+        <!-- Translation buttons -->
+        <button onclick="translateContent('en')">English</button>
+        <button onclick="translateContent('zh')">中文 (繁體)</button>
+
+        <h2 id="resourcesTitle">Need More Information?</h2>
+        <p id="intro">Explore our resources or reach out to a professional.</p>
         <ul>
-            <li><a href="#">FAQs: Common Questions About Sensory Diets</a></li>
-            <li><a href="#">Contact Us: Get in Touch with Our Team</a></li>
+            <li><a href="#" id="faq">FAQs: Common Questions About Sensory Diets</a></li>
+            <li><a href="#" id="contactUs">Contact Us: Get in Touch with Our Team</a></li>
         </ul>
-        <p><a href="index.html">Back to Home</a></p>
+        <p><a id="backHome" href="index.html">Back to Home</a></p>
     </div>
 </body>
 </html>
