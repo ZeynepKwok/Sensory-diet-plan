@@ -10,27 +10,82 @@
 <body>
     <div class="sidebar">
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="happening.html"><i class="fas fa-info-circle"></i> What Is Happening?</a>
-            <a href="why.html"><i class="fas fa-question-circle"></i> Why Does This Happen?</a>
-            <a href="support.html" class="active"><i class="fas fa-hands-helping"></i> What Should I Do?</a>
-            <a href="sensory-diet.html"><i class="fas fa-clipboard-list"></i> What Is a Sensory Diet Plan?</a>
-            <a href="create-plan.html"><i class="fas fa-cogs"></i> Create My Sensory Diet Plan</a>
-            <a href="resources.html"><i class="fas fa-book"></i> Need More Information?</a>
+            <a href="index.html"><i class="fas fa-home"></i> <span id="home">Home</span></a>
+            <a href="happening.html"><i class="fas fa-info-circle"></i> <span id="whatIsHappening">What Is Happening?</span></a>
+            <a href="why.html"><i class="fas fa-question-circle"></i> <span id="whyDoesThisHappen">Why Does This Happen?</span></a>
+            <a href="support.html" class="active"><i class="fas fa-hands-helping"></i> <span id="whatShouldIDo">What Should I Do?</span></a>
+            <a href="sensory-diet.html"><i class="fas fa-clipboard-list"></i> <span id="whatIsASensoryDietPlan">What Is a Sensory Diet Plan?</span></a>
+            <a href="create-plan.html"><i class="fas fa-cogs"></i> <span id="createMySensoryDietPlan">Create My Sensory Diet Plan</span></a>
+            <a href="resources.html"><i class="fas fa-book"></i> <span id="needMoreInformation">Need More Information?</span></a>
         </nav>
     </div>
 
     <div class="container">
-        <h2>What Should I Do?</h2>
-        <p>Steps to Support Your Child</p>
-        <p>
+        <!-- Translation buttons -->
+        <button onclick="translateContent('en')">English</button>
+        <button onclick="translateContent('zh')">中文 (繁體)</button>
+
+        <h2 id="title">What Should I Do?</h2>
+        <p id="steps">Steps to Support Your Child</p>
+        <p id="seekHelp">
             <strong>Seek Professional Help:</strong> The first and most important step is to consult with medical professionals, especially an <strong>occupational therapist (OT)</strong>. An OT can assess your child’s sensory needs and develop a personalized intervention plan that’s tailored specifically to them.
         </p>
-        <p>
+        <p id="usingTool">
             <strong>Using This Tool:</strong> While you’re seeking or waiting for professional guidance, you can use our <strong>Sensory Diet Plan Generator</strong> to create a supportive plan for your child. This tool is designed to help manage your child’s sensory needs in the meantime and can complement the advice you receive from an OT.
         </p>
-        <p><a href="sensory-diet.html">Next: What Is a Sensory Diet Plan? Does It Work?</a></p>
-        <p><a href="index.html">Back to Home</a></p>
+        <p><a id="next" href="sensory-diet.html">Next: What Is a Sensory Diet Plan? Does It Work?</a></p>
+        <p><a id="backHome" href="index.html">Back to Home</a></p>
     </div>
+
+    <script>
+        const translations = {
+            "en": {
+                "title": "What Should I Do?",
+                "steps": "Steps to Support Your Child",
+                "seekHelp": "Seek Professional Help: The first and most important step is to consult with medical professionals, especially an occupational therapist (OT). An OT can assess your child’s sensory needs and develop a personalized intervention plan that’s tailored specifically to them.",
+                "usingTool": "Using This Tool: While you’re seeking or waiting for professional guidance, you can use our Sensory Diet Plan Generator to create a supportive plan for your child. This tool is designed to help manage your child’s sensory needs in the meantime and can complement the advice you receive from an OT.",
+                "next": "Next: What Is a Sensory Diet Plan? Does It Work?",
+                "backHome": "Back to Home",
+                "home": "Home",
+                "whatIsHappening": "What Is Happening?",
+                "whyDoesThisHappen": "Why Does This Happen?",
+                "whatShouldIDo": "What Should I Do?",
+                "whatIsASensoryDietPlan": "What Is a Sensory Diet Plan?",
+                "createMySensoryDietPlan": "Create My Sensory Diet Plan",
+                "needMoreInformation": "Need More Information?"
+            },
+            "zh": {
+                "title": "我該怎麼做？",
+                "steps": "支持您孩子的步驟",
+                "seekHelp": "尋求專業幫助：第一步也是最重要的一步是諮詢醫療專業人員，例如職業治療師。職業治療師會評估您孩子的感覺需求並制定專為他們量身定制的治療計劃。",
+                "usingTool": "使用此工具：當您正在尋求或等待專業指導時，您可以使用我們的感覺餐單生成器來為您的孩子創建輔助計劃。此工具旨在幫助管理孩子的感覺需求，並可補充職業治療死提出的建議。",
+                "next": "下一步：什麼是感覺餐單？它有效嗎？",
+                "backHome": "返回首頁",
+                "home": "首頁",
+                "whatIsHappening": "發生了什麼？",
+                "whyDoesThisHappen": "為什麼會發生這種情況？",
+                "whatShouldIDo": "我該怎麼做？",
+                "whatIsASensoryDietPlan": "什麼是感覺餐單？",
+                "createMySensoryDietPlan": "創建我的感覺餐單",
+                "needMoreInformation": "需要更多信息？"
+            }
+        };
+
+        function translateContent(lang) {
+            document.getElementById("title").textContent = translations[lang]["title"];
+            document.getElementById("steps").textContent = translations[lang]["steps"];
+            document.getElementById("seekHelp").textContent = translations[lang]["seekHelp"];
+            document.getElementById("usingTool").textContent = translations[lang]["usingTool"];
+            document.getElementById("next").textContent = translations[lang]["next"];
+            document.getElementById("backHome").textContent = translations[lang]["backHome"];
+            document.getElementById("home").textContent = translations[lang]["home"];
+            document.getElementById("whatIsHappening").textContent = translations[lang]["whatIsHappening"];
+            document.getElementById("whyDoesThisHappen").textContent = translations[lang]["whyDoesThisHappen"];
+            document.getElementById("whatShouldIDo").textContent = translations[lang]["whatShouldIDo"];
+            document.getElementById("whatIsASensoryDietPlan").textContent = translations[lang]["whatIsASensoryDietPlan"];
+            document.getElementById("createMySensoryDietPlan").textContent = translations[lang]["createMySensoryDietPlan"];
+            document.getElementById("needMoreInformation").textContent = translations[lang]["needMoreInformation"];
+        }
+    </script>
 </body>
 </html>
