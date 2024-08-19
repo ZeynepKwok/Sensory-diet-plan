@@ -17,7 +17,8 @@
                 "whatShouldIDo": "What Should I Do?",
                 "whatIsASensoryDietPlan": "What Is a Sensory Diet Plan?",
                 "createMySensoryDietPlan": "Create My Sensory Diet Plan",
-                "needMoreInformation": "Need More Information?"
+                "needMoreInformation": "Need More Information?",
+                "languageNote": "The Sensory Diet Plan Generator currently only offers content in English."
             },
             "zh": {
                 "welcomeTitle": "歡迎來到感覺餐單生成器",
@@ -29,7 +30,8 @@
                 "whatShouldIDo": "我應該怎麼做？",
                 "whatIsASensoryDietPlan": "什麼是感覺餐單？",
                 "createMySensoryDietPlan": "創建我的感覺餐單",
-                "needMoreInformation": "需要更多信息？"
+                "needMoreInformation": "需要更多信息？",
+                "languageNote": "感覺餐單生成器目前僅提供英文內容。"
             }
         };
 
@@ -44,6 +46,7 @@
             document.getElementById("whatIsASensoryDietPlan").textContent = translations[lang]["whatIsASensoryDietPlan"];
             document.getElementById("createMySensoryDietPlan").textContent = translations[lang]["createMySensoryDietPlan"];
             document.getElementById("needMoreInformation").textContent = translations[lang]["needMoreInformation"];
+            document.getElementById("languageNote").textContent = translations[lang]["languageNote"];
         }
     </script>
 </head>
@@ -68,6 +71,9 @@
         <h1 id="welcomeTitle">Welcome to the Sensory Diet Plan Generator</h1>
         <p><strong id="byline">By Zeynep Kwok and Alessia Samperi</strong></p>
         <p id="intro">This website is dedicated to helping caregivers and professionals create personalized sensory diet plans for children with Autism Spectrum Disorder (ASD). Our goal is to provide valuable resources and tools that can assist in managing sensory processing challenges, helping children to thrive in their daily lives.</p>
+
+        <!-- Language note -->
+        <p id="languageNote">The Sensory Diet Plan Generator currently only offers content in English.</p>
     </div>
 </body>
 </html>
