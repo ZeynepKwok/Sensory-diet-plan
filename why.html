@@ -10,27 +10,82 @@
 <body>
     <div class="sidebar">
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="happening.html"><i class="fas fa-info-circle"></i> What Is Happening?</a>
-            <a href="why.html" class="active"><i class="fas fa-question-circle"></i> Why Does This Happen?</a>
-            <a href="support.html"><i class="fas fa-hands-helping"></i> What Should I Do?</a>
-            <a href="sensory-diet.html"><i class="fas fa-clipboard-list"></i> What Is a Sensory Diet Plan?</a>
-            <a href="create-plan.html"><i class="fas fa-cogs"></i> Create My Sensory Diet Plan</a>
-            <a href="resources.html"><i class="fas fa-book"></i> Need More Information?</a>
+            <a href="index.html"><i class="fas fa-home"></i> <span id="home">Home</span></a>
+            <a href="happening.html"><i class="fas fa-info-circle"></i> <span id="whatIsHappening">What Is Happening?</span></a>
+            <a href="why.html" class="active"><i class="fas fa-question-circle"></i> <span id="whyDoesThisHappen">Why Does This Happen?</span></a>
+            <a href="support.html"><i class="fas fa-hands-helping"></i> <span id="whatShouldIDo">What Should I Do?</span></a>
+            <a href="sensory-diet.html"><i class="fas fa-clipboard-list"></i> <span id="whatIsASensoryDietPlan">What Is a Sensory Diet Plan?</span></a>
+            <a href="create-plan.html"><i class="fas fa-cogs"></i> <span id="createMySensoryDietPlan">Create My Sensory Diet Plan</span></a>
+            <a href="resources.html"><i class="fas fa-book"></i> <span id="needMoreInformation">Need More Information?</span></a>
         </nav>
     </div>
 
     <div class="container">
-        <h2>Why Does This Happen?</h2>
-        <p>Exploring the Reasoning Behind Sensory Reactions</p>
-        <p>
+        <!-- Translation buttons -->
+        <button onclick="translateContent('en')">English</button>
+        <button onclick="translateContent('zh')">中文 (繁體)</button>
+
+        <h2 id="title">Why Does This Happen?</h2>
+        <p id="exploringReasoning">Exploring the Reasoning Behind Sensory Reactions</p>
+        <p id="sensoryProcessing">
             Sensory processing differences occur because the brain processes sensory information in unique ways. For some children, certain sensations might be overwhelming, while others might not register enough sensation and therefore seek out more.
         </p>
-        <p>
+        <p id="exampleBehavior">
             For example, your child might cover their ears in noisy environments, avoid certain textures, or seek out intense sensory experiences like spinning. These behaviors are ways for your child to manage their sensory experiences and feel more comfortable.
         </p>
-        <p><a href="support.html">Next: What Should I Do?</a></p>
-        <p><a href="index.html">Back to Home</a></p>
+        <p><a id="next" href="support.html">Next: What Should I Do?</a></p>
+        <p><a id="backHome" href="index.html">Back to Home</a></p>
     </div>
+
+    <script>
+        const translations = {
+            "en": {
+                "title": "Why Does This Happen?",
+                "exploringReasoning": "Exploring the Reasoning Behind Sensory Reactions",
+                "sensoryProcessing": "Sensory processing differences occur because the brain processes sensory information in unique ways. For some children, certain sensations might be overwhelming, while others might not register enough sensation and therefore seek out more.",
+                "exampleBehavior": "For example, your child might cover their ears in noisy environments, avoid certain textures, or seek out intense sensory experiences like spinning. These behaviors are ways for your child to manage their sensory experiences and feel more comfortable.",
+                "next": "Next: What Should I Do?",
+                "backHome": "Back to Home",
+                "home": "Home",
+                "whatIsHappening": "What Is Happening?",
+                "whyDoesThisHappen": "Why Does This Happen?",
+                "whatShouldIDo": "What Should I Do?",
+                "whatIsASensoryDietPlan": "What Is a Sensory Diet Plan?",
+                "createMySensoryDietPlan": "Create My Sensory Diet Plan",
+                "needMoreInformation": "Need More Information?"
+            },
+            "zh": {
+                "title": "為什麼會發生這種情況？",
+                "exploringReasoning": "探索感覺反應背後的原因",
+                "sensoryProcessing": "感覺處理差異的原因是大腦以獨特的方式處理感覺信息。對於某些孩子來說，某些感覺可能是壓倒性的；相反，對於其他孩子來說，某些感觀可能沒有得到足夠的滿足，從而尋求更多的刺激。",
+                "exampleBehavior": "例如，您的孩子可能會在嘈雜的環境中捂住耳朵減少聽覺刺激；或尋求強烈的感覺體驗，如旋轉。這些行為是您的孩子管理感覺體驗並感覺更舒適的一種方式。",
+                "next": "下一步：我該怎麼做？",
+                "backHome": "返回首頁",
+                "home": "首頁",
+                "whatIsHappening": "發生了什麼？",
+                "whyDoesThisHappen": "為什麼會發生這種情況？",
+                "whatShouldIDo": "我該怎麼做？",
+                "whatIsASensoryDietPlan": "什麼是感覺餐單？",
+                "createMySensoryDietPlan": "創建我的感覺餐單",
+                "needMoreInformation": "需要更多信息？"
+            }
+        };
+
+        function translateContent(lang) {
+            document.getElementById("title").textContent = translations[lang]["title"];
+            document.getElementById("exploringReasoning").textContent = translations[lang]["exploringReasoning"];
+            document.getElementById("sensoryProcessing").textContent = translations[lang]["sensoryProcessing"];
+            document.getElementById("exampleBehavior").textContent = translations[lang]["exampleBehavior"];
+            document.getElementById("next").textContent = translations[lang]["next"];
+            document.getElementById("backHome").textContent = translations[lang]["backHome"];
+            document.getElementById("home").textContent = translations[lang]["home"];
+            document.getElementById("whatIsHappening").textContent = translations[lang]["whatIsHappening"];
+            document.getElementById("whyDoesThisHappen").textContent = translations[lang]["whyDoesThisHappen"];
+            document.getElementById("whatShouldIDo").textContent = translations[lang]["whatShouldIDo"];
+            document.getElementById("whatIsASensoryDietPlan").textContent = translations[lang]["whatIsASensoryDietPlan"];
+            document.getElementById("createMySensoryDietPlan").textContent = translations[lang]["createMySensoryDietPlan"];
+            document.getElementById("needMoreInformation").textContent = translations[lang]["needMoreInformation"];
+        }
+    </script>
 </body>
 </html>
