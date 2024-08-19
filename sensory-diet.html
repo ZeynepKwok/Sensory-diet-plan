@@ -5,67 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Is a Sensory Diet Plan?</title>
     <link rel="stylesheet" href="styleforall.css"> <!-- Link to your main CSS file -->
+    <script>
+        const translations = {
+            "en": {
+                "title": "What Is a Sensory Diet Plan? Does It Work?",
+                "understanding": "Understanding and Implementing Sensory Diets",
+                "description": "A sensory diet plan is a personalized schedule of sensory activities that help your child regulate their sensory input throughout the day. These activities can help calm, alert, or balance sensory responses, depending on what your child needs at any given moment.",
+                "whyWorks": "Why It Works: Sensory diet plans are effective because they are tailored to your child’s unique sensory profile. Research and clinical evidence support the use of sensory activities to improve focus, reduce anxiety, and help children with ASD participate more fully in daily life.",
+                "howToDesign": "How to Design an Effective Sensory Diet Plan",
+                "designDescription": "Designing a sensory diet plan involves several key steps:",
+                "step1": "Understand Your Child's Sensory Profile:",
+                "step1Desc": "Work with an occupational therapist (OT) to identify your child's specific sensory needs. This includes understanding whether your child is hypersensitive or hyposensitive to certain stimuli and what types of sensory input they seek or avoid.",
+                "step2": "Set Clear Goals:",
+                "step2Desc": "Determine the specific outcomes you hope to achieve with the sensory diet, such as improving focus during school, reducing anxiety in social situations, or enhancing daily living skills.",
+                "step3": "Create a Balanced Schedule:",
+                "step3Desc": "Incorporate a mix of calming, alerting, and organizing activities throughout the day. Ensure the activities are appropriate for your child's age, interests, and abilities.",
+                "step4": "Include Sensory Breaks:",
+                "step4Desc": "Plan regular sensory breaks during the day, especially during transitions or after periods of concentration. These breaks can help your child reset and prepare for the next activity.",
+                "step5": "Be Flexible:",
+                "step5Desc": "Monitor your child's response to the activities and adjust the plan as needed. What works one day may need to be modified the next, depending on your child's mood and environment.",
+                "measureEffectiveness": "How to Measure the Effectiveness of a Sensory Diet Plan",
+                "measureDescription": "To ensure the sensory diet plan is working, consider the following approaches:",
+                "measure1": "Track Your Child's Mood and Behavior:",
+                "measure1Desc": "Use a simple log to record your child's mood and behavior before and after each sensory activity. Over time, patterns will emerge that indicate which activities are most effective.",
+                "measure2": "Monitor Goal Progress:",
+                "measure2Desc": "Regularly review the goals you set for your child. Are they making progress in the areas you targeted? If not, consider revisiting the sensory activities or adjusting the schedule.",
+                "measure3": "Consult with Your OT:",
+                "measure3Desc": "Schedule follow-up sessions with your OT to discuss how the sensory diet is working and make any necessary changes.",
+                "measure4": "Involve Your Child:",
+                "measure4Desc": "As your child grows, involve them in the process. Ask them what activities they enjoy and which ones they find helpful. Their input is valuable in creating a plan that works best for them.",
+                "measure5": "Use Objective Measures:",
+                "measure5Desc": "In some cases, you may want to use objective measures like standardized assessments or behavioral checklists to track changes over time.",
+                "next": "Next: Create My Sensory Diet Plan",
+                "backHome": "Back to Home",
+                "home": "Home",
+                "whatIsHappening": "What Is Happening?",
+                "whyDoesThisHappen": "Why Does This Happen?",
+                "whatShouldIDo": "What Should I Do?",
+                "whatIsASensoryDietPlan": "What Is a Sensory Diet Plan?",
+                "createMySensoryDietPlan": "Create My Sensory Diet Plan",
+                "needMoreInformation": "Need More Information?"
+            },
+            "zh": {
+                "title": "什麼是感覺餐單？它有效嗎？",
+                "understanding": "了解和實施感覺餐單",
+                "description": "感覺餐單是一個個人化的感覺活動時間表，幫助您的孩子在一天中調節感覺輸入。這些活動可以幫助平靜、警覺或平衡感覺反應，具體取決於您孩子在任何特定時刻的需求。",
+                "whyWorks": "為什麼它有效：感覺餐單是根據您孩子的獨特感覺檔案量身定制的。研究和臨床證據支持使用感覺活動來提高注意力，減少焦慮，並幫助有自閉症譜系障礙的孩子更充分地參與日常生活。",
+                "howToDesign": "如何設計有效的感覺餐單",
+                "designDescription": "設計感覺餐單包括幾個關鍵步驟：",
+                "step1": "了解您的孩子的感覺檔案：",
+                "step1Desc": "與職業治療師（Occupational therapist）合作，確定您孩子的具體感覺需求。這包括了解您的孩子對某些刺激是高敏（過敏）還是鈍感（低敏），以及他們尋求或避免的感覺刺激類型。",
+                "step2": "設定明確的目標：",
+                "step2Desc": "確定您希望通過感覺餐單實現的具體結果，例如提高學校期間的注意力，減少社交情境中的焦慮，或增強日常生活技能。",
+                "step3": "創建平衡的時間表：",
+                "step3Desc": "將平靜、警覺和組織活動結合到一天中。確保這些活動適合您孩子的年齡、興趣和能力。",
+                "step4": "包括感覺休息：",
+                "step4Desc": "在一天中，尤其是在過渡或集中注意力後的時段，計劃定期的感覺休息。這些休息可以幫助您的孩子重置並準備好進行下一個活動。",
+                "step5": "保持靈活性：",
+                "step5Desc": "監測您孩子對活動的反應，並根據需要調整計劃。某一天有效的東西可能需要在下一次根據您孩子的情緒和環境進行修改。",
+                "measureEffectiveness": "如何衡量感覺餐單的有效性",
+                "measureDescription": "為了確保感覺餐單的效果，請考慮以下方法：",
+                "measure1": "跟踪您孩子的情緒和行為：",
+                "measure1Desc": "使用簡單的日誌記錄您孩子在每個感覺活動前後的情緒和行為。隨著時間的推移，會出現模式，這些模式表明哪些活動最有效。",
+                "measure2": "監測目標進展：",
+                "measure2Desc": "定期審查您為孩子設定的目標。他們是否在您設定的目標領域取得進展？如果沒有，考慮重新審視感覺活動或調整時間表。",
+                "measure3": "與您的職業治療師咨詢：",
+                "measure3Desc": "安排與您的職業治療師進行後續會議，討論感覺餐單的效果並進行任何必要的更改。",
+                "measure4": "讓您的孩子參與：",
+                "measure4Desc": "隨著您的孩子成長，讓他們參與過程。問問他們喜歡哪些活動以及哪些對他們有幫助。他們的意見對創建最佳效果的計劃非常重要。",
+                "measure5": "使用客觀措施：",
+                "measure5Desc": "在某些情況下，您可能希望使用客觀措施，如標準化評估或行為清單來跟踪變化。",
+                "next": "下一步：創建我的感覺餐單",
+                "backHome": "返回首頁",
+                "home": "首頁",
+                "whatIsHappening": "發生了什麼？",
+                "whyDoesThisHappen": "為什麼會這樣？",
+                "whatShouldIDo": "我應該怎麼做？",
+                "whatIsASensoryDietPlan": "什麼是感覺餐單？",
+                "createMySensoryDietPlan": "創建我的感覺餐單",
+                "needMoreInformation": "需要更多信息？"
+            }
+        };
+
+        function translateContent(lang) {
+            document.getElementById("title").textContent = translations[lang]["title"];
+            document.getElementById("understanding").textContent = translations[lang]["understanding"];
+            document.getElementById("description").textContent = translations[lang]["description"];
+            document.getElementById("whyWorks").textContent = translations[lang]["whyWorks"];
+            document.getElementById("howToDesign").textContent = translations[lang]["howToDesign"];
+            document.getElementById("designDescription").textContent = translations[lang]["designDescription"];
+            document.getElementById("step1").textContent = translations[lang]["step1"];
+            document.getElementById("step1Desc").textContent = translations[lang]["step1Desc"];
+            document.getElementById("step2").textContent = translations[lang]["step2"];
+            document.getElementById("step2Desc").textContent = translations[lang]["step2Desc"];
+            document.getElementById("step3").textContent = translations[lang]["step3"];
+            document.getElementById("step3Desc").textContent = translations[lang]["step3Desc"];
+            document.getElementById("step4").textContent = translations[lang]["step4"];
+            document.getElementById("step4Desc").textContent = translations[lang]["step4Desc"];
+            document.getElementById("step5").textContent = translations[lang]["step5"];
+            document.getElementById("step5Desc").textContent = translations[lang]["step5Desc"];
+            document.getElementById("measureEffectiveness").textContent = translations[lang]["measureEffectiveness"];
+            document.getElementById("measureDescription").textContent = translations[lang]["measureDescription"];
+            document.getElementById("measure1").textContent = translations[lang]["measure1"];
+            document.getElementById("measure1Desc").textContent = translations[lang]["measure1Desc"];
+            document.getElementById("measure2").textContent = translations[lang]["measure2"];
+            document.getElementById("measure2Desc").textContent = translations[lang]["measure2Desc"];
+            document.getElementById("measure3").textContent = translations[lang]["measure3"];
+            document.getElementById("measure3Desc").textContent = translations[lang]["measure3Desc"];
+            document.getElementById("measure4").textContent = translations[lang]["measure4"];
+            document.getElementById("measure4Desc").textContent = translations[lang]["measure4Desc"];
+            document.getElementById("measure5").textContent = translations[lang]["measure5"];
+            document.getElementById("measure5Desc").textContent = translations[lang]["measure5Desc"];
+            document.getElementById("next").textContent = translations[lang]["next"];
+            document.getElementById("backHome").textContent = translations[lang]["backHome"];
+            document.getElementById("home").textContent = translations[lang]["home"];
+            document.getElementById("whatIsHappening").textContent = translations[lang]["whatIsHappening"];
+            document.getElementById("whyDoesThisHappen").textContent = translations[lang]["whyDoesThisHappen"];
+            document.getElementById("whatShouldIDo").textContent = translations[lang]["whatShouldIDo"];
+            document.getElementById("whatIsASensoryDietPlan").textContent = translations[lang]["whatIsASensoryDietPlan"];
+            document.getElementById("createMySensoryDietPlan").textContent = translations[lang]["createMySensoryDietPlan"];
+            document.getElementById("needMoreInformation").textContent = translations[lang]["needMoreInformation"];
+        }
+    </script>
 </head>
 <body>
     <div class="sidebar">
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="happening.html"><i class="fas fa-info-circle"></i> What Is Happening?</a>
-            <a href="why.html"><i class="fas fa-question-circle"></i> Why Does This Happen?</a>
-            <a href="support.html"><i class="fas fa-hands-helping"></i> What Should I Do?</a>
-            <a href="sensory-diet.html" class="active"><i class="fas fa-clipboard-list"></i> What Is a Sensory Diet Plan?</a>
-            <a href="create-plan.html"><i class="fas fa-cogs"></i> Create My Sensory Diet Plan</a>
-            <a href="resources.html"><i class="fas fa-book"></i> Need More Information?</a>
+            <a href="index.html"><i class="fas fa-home"></i> <span id="home">Home</span></a>
+            <a href="happening.html"><i class="fas fa-info-circle"></i> <span id="whatIsHappening">What Is Happening?</span></a>
+            <a href="why.html"><i class="fas fa-question-circle"></i> <span id="whyDoesThisHappen">Why Does This Happen?</span></a>
+            <a href="support.html"><i class="fas fa-hands-helping"></i> <span id="whatShouldIDo">What Should I Do?</span></a>
+            <a href="sensory-diet.html" class="active"><i class="fas fa-clipboard-list"></i> <span id="whatIsASensoryDietPlan">What Is a Sensory Diet Plan?</span></a>
+            <a href="create-plan.html"><i class="fas fa-cogs"></i> <span id="createMySensoryDietPlan">Create My Sensory Diet Plan</span></a>
+            <a href="resources.html"><i class="fas fa-book"></i> <span id="needMoreInformation">Need More Information?</span></a>
         </nav>
     </div>
 
     <div class="container">
-        <h2>What Is a Sensory Diet Plan? Does It Work?</h2>
-        <p>Understanding and Implementing Sensory Diets</p>
-        <p>
+        <!-- Translation buttons -->
+        <button onclick="translateContent('en')">English</button>
+        <button onclick="translateContent('zh')">中文 (繁體)</button>
+
+        <h2 id="title">What Is a Sensory Diet Plan? Does It Work?</h2>
+        <p id="understanding">Understanding and Implementing Sensory Diets</p>
+        <p id="description">
             A <strong>sensory diet plan</strong> is a personalized schedule of sensory activities that help your child regulate their sensory input throughout the day. These activities can help calm, alert, or balance sensory responses, depending on what your child needs at any given moment.
         </p>
-        <p>
+        <p id="whyWorks">
             <strong>Why It Works:</strong> Sensory diet plans are effective because they are tailored to your child’s unique sensory profile. Research and clinical evidence support the use of sensory activities to improve focus, reduce anxiety, and help children with ASD participate more fully in daily life.
         </p>
 
-        <h3>How to Design an Effective Sensory Diet Plan</h3>
-        <p>Designing a sensory diet plan involves several key steps:</p>
+        <h3 id="howToDesign">How to Design an Effective Sensory Diet Plan</h3>
+        <p id="designDescription">Designing a sensory diet plan involves several key steps:</p>
         <ol>
             <li>
-                <strong>Understand Your Child's Sensory Profile:</strong>
-                <p>Work with an occupational therapist (OT) to identify your child's specific sensory needs. This includes understanding whether your child is hypersensitive or hyposensitive to certain stimuli and what types of sensory input they seek or avoid.</p>
+                <strong id="step1">Understand Your Child's Sensory Profile:</strong>
+                <p id="step1Desc">Work with an occupational therapist (OT) to identify your child's specific sensory needs. This includes understanding whether your child is hypersensitive or hyposensitive to certain stimuli and what types of sensory input they seek or avoid.</p>
             </li>
             <li>
-                <strong>Set Clear Goals:</strong>
-                <p>Determine the specific outcomes you hope to achieve with the sensory diet, such as improving focus during school, reducing anxiety in social situations, or enhancing daily living skills.</p>
+                <strong id="step2">Set Clear Goals:</strong>
+                <p id="step2Desc">Determine the specific outcomes you hope to achieve with the sensory diet, such as improving focus during school, reducing anxiety in social situations, or enhancing daily living skills.</p>
             </li>
             <li>
-                <strong>Create a Balanced Schedule:</strong>
-                <p>Incorporate a mix of calming, alerting, and organizing activities throughout the day. Ensure the activities are appropriate for your child's age, interests, and abilities.</p>
+                <strong id="step3">Create a Balanced Schedule:</strong>
+                <p id="step3Desc">Incorporate a mix of calming, alerting, and organizing activities throughout the day. Ensure the activities are appropriate for your child's age, interests, and abilities.</p>
             </li>
             <li>
-                <strong>Include Sensory Breaks:</strong>
-                <p>Plan regular sensory breaks during the day, especially during transitions or after periods of concentration. These breaks can help your child reset and prepare for the next activity.</p>
+                <strong id="step4">Include Sensory Breaks:</strong>
+                <p id="step4Desc">Plan regular sensory breaks during the day, especially during transitions or after periods of concentration. These breaks can help your child reset and prepare for the next activity.</p>
             </li>
             <li>
-                <strong>Be Flexible:</strong>
-                <p>Monitor your child's response to the activities and adjust the plan as needed. What works one day may need to be modified the next, depending on your child's mood and environment.</p>
+                <strong id="step5">Be Flexible:</strong>
+                <p id="step5Desc">Monitor your child's response to the activities and adjust the plan as needed. What works one day may need to be modified the next, depending on your child's mood and environment.</p>
             </li>
         </ol>
 
-        <h3>How to Measure the Effectiveness of a Sensory Diet Plan</h3>
-        <p>To ensure the sensory diet plan is working, consider the following approaches:</p>
+        <h3 id="measureEffectiveness">How to Measure the Effectiveness of a Sensory Diet Plan</h3>
+        <p id="measureDescription">To ensure the sensory diet plan is working, consider the following approaches:</p>
         <ul>
-            <li><strong>Track Your Child's Mood and Behavior:</strong> Use a simple log to record your child's mood and behavior before and after each sensory activity. Over time, patterns will emerge that indicate which activities are most effective.</li>
-            <li><strong>Monitor Goal Progress:</strong> Regularly review the goals you set for your child. Are they making progress in the areas you targeted? If not, consider revisiting the sensory activities or adjusting the schedule.</li>
-            <li><strong>Consult with Your OT:</strong> Schedule follow-up sessions with your OT to discuss how the sensory diet is working and make any necessary changes.</li>
-            <li><strong>Involve Your Child:</strong> As your child grows, involve them in the process. Ask them what activities they enjoy and which ones they find helpful. Their input is valuable in creating a plan that works best for them.</li>
-            <li><strong>Use Objective Measures:</strong> In some cases, you may want to use objective measures like standardized assessments or behavioral checklists to track changes over time.</li>
+            <li><strong id="measure1">Track Your Child's Mood and Behavior:</strong> <span id="measure1Desc">Use a simple log to record your child's mood and behavior before and after each sensory activity. Over time, patterns will emerge that indicate which activities are most effective.</span></li>
+            <li><strong id="measure2">Monitor Goal Progress:</strong> <span id="measure2Desc">Regularly review the goals you set for your child. Are they making progress in the areas you targeted? If not, consider revisiting the sensory activities or adjusting the schedule.</span></li>
+            <li><strong id="measure3">Consult with Your OT:</strong> <span id="measure3Desc">Schedule follow-up sessions with your OT to discuss how the sensory diet is working and make any necessary changes.</span></li>
+            <li><strong id="measure4">Involve Your Child:</strong> <span id="measure4Desc">As your child grows, involve them in the process. Ask them what activities they enjoy and which ones they find helpful. Their input is valuable in creating a plan that works best for them.</span></li>
+            <li><strong id="measure5">Use Objective Measures:</strong> <span id="measure5Desc">In some cases, you may want to use objective measures like standardized assessments or behavioral checklists to track changes over time.</span></li>
         </ul>
 
-        <p><a href="create-plan.html">Next: Create My Sensory Diet Plan</a></p>
-        <p><a href="index.html">Back to Home</a></p>
+        <p><a id="next" href="create-plan.html">Next: Create My Sensory Diet Plan</a></p>
+        <p><a id="backHome" href="index.html">Back to Home</a></p>
     </div>
 </body>
 </html>
