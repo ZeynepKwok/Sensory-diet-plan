@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Does This Happen?</title>
     <link rel="stylesheet" href="styleforall.css"> <!-- Link to your main CSS file -->
-    <script src="script.js" defer></script> <!-- Link to your JavaScript file -->
 </head>
 <body>
     <div class="sidebar">
@@ -26,13 +25,44 @@
         <button onclick="translateContent('zh')">中文 (繁體)</button>
 
         <h2 id="title">Why Does This Happen?</h2>
-        <p id="exploringReasoning">Exploring the Reasoning Behind Sensory Reactions</p>
-        <p id="sensoryProcessing">
-            Sensory processing differences occur because the brain processes sensory information in unique ways. For some children, certain sensations might be overwhelming, while others might not register enough sensation and therefore seek out more.
-        </p>
-        <p id="exampleBehavior">
-            For example, your child might cover their ears in noisy environments, avoid certain textures, or seek out intense sensory experiences like spinning. These behaviors are ways for your child to manage their sensory experiences and feel more comfortable.
-        </p>
+        <p id="understandingReason">Understanding the Reasons Behind Sensory Reactions in Autism Spectrum Disorder (ASD)</p>
+
+        <p id="description1">If your child has Autism Spectrum Disorder (ASD), you might notice that they react to sights, sounds, touches, and other sensory experiences in unique ways. These reactions happen because their brain processes sensory information differently. Here’s why:</p>
+
+        <h3 id="brainDifferencesTitle">1. Differences in the Brain</h3>
+        <p id="brainDifferences">Children with ASD have brains that are wired differently, which can make everyday sights, sounds, and touches feel very different from how other people experience them.</p>
+        <ul>
+            <li id="hypersensitivity">Hypersensitivity: Sometimes, your child’s brain might make sounds, lights, or touches seem much stronger or more intense than they are. This can make normal experiences feel overwhelming or even painful.</li>
+            <li id="hyposensitivity">Hyposensitivity: Other times, your child’s brain might not pick up on things as strongly. They might not notice sounds, lights, or touches that others do, which can make them seek out stronger experiences to feel balanced.</li>
+        </ul>
+
+        <h3 id="sensoryChallengesTitle">2. Sensory Processing Challenges</h3>
+        <p id="sensoryChallenges">Children with ASD often have something called Sensory Processing Disorder (SPD), which means their brain has trouble organizing and responding to the information it gets from their senses.</p>
+        <ul>
+            <li id="overResponsive">Over-Responsive: Your child might react too strongly to certain things, like avoiding certain textures or covering their ears in noisy places.</li>
+            <li id="underResponsive">Under-Responsive: On the flip side, they might not react much at all to things that would bother others, like not noticing when they are touched or when there’s a loud noise.</li>
+        </ul>
+
+        <h3 id="geneticsTitle">3. Genetics Play a Role</h3>
+        <p id="genetics">The way your child processes sensory information can also be influenced by genetics—basically, it can run in the family.</p>
+        <ul>
+            <li id="inheritedSensitivities">Inherited Sensitivities: If you or another family member has sensory sensitivities, your child might have them too. It’s something that can be passed down through genes.</li>
+        </ul>
+
+        <h3 id="environmentTitle">4. The Environment Matters</h3>
+        <p id="environment">Your child’s environment and early experiences can also shape how they respond to sensory input.</p>
+        <ul>
+            <li id="earlyExperiences">Early Experiences: If your child didn’t have much exposure to different sensory experiences when they were younger, they might be more sensitive when they encounter new things.</li>
+            <li id="stressChanges">Stress and Changes: When your child is stressed or in a new environment, their sensory sensitivities might become more intense because their brain is already on high alert.</li>
+        </ul>
+
+        <h3 id="anxietyTitle">5. Anxiety and Sensory Sensitivity</h3>
+        <p id="anxiety">Anxiety can make sensory sensitivities worse. When your child is anxious, their body is on high alert, which can make sounds, lights, and touches feel even more overwhelming.</p>
+        <ul>
+            <li id="heightenedAlertness">Heightened Alertness: If your child is feeling anxious, they might be more sensitive to sensory input, making ordinary experiences feel much more intense.</li>
+            <li id="avoidance">Avoidance: To cope with this, your child might start avoiding certain sensory experiences, which can make it harder for them to adjust to new situations.</li>
+        </ul>
+
         <p><a id="next" href="support.html">Next: What Should I Do?</a></p>
         <p><a id="backHome" href="index.html">Back to Home</a></p>
     </div>
@@ -41,9 +71,27 @@
         const translations = {
             "en": {
                 "title": "Why Does This Happen?",
-                "exploringReasoning": "Exploring the Reasoning Behind Sensory Reactions",
-                "sensoryProcessing": "Sensory processing differences occur because the brain processes sensory information in unique ways. For some children, certain sensations might be overwhelming, while others might not register enough sensation and therefore seek out more.",
-                "exampleBehavior": "For example, your child might cover their ears in noisy environments, avoid certain textures, or seek out intense sensory experiences like spinning. These behaviors are ways for your child to manage their sensory experiences and feel more comfortable.",
+                "understandingReason": "Understanding the Reasons Behind Sensory Reactions in Autism Spectrum Disorder (ASD)",
+                "description1": "If your child has Autism Spectrum Disorder (ASD), you might notice that they react to sights, sounds, touches, and other sensory experiences in unique ways. These reactions happen because their brain processes sensory information differently. Here’s why:",
+                "brainDifferencesTitle": "1. Differences in the Brain",
+                "brainDifferences": "Children with ASD have brains that are wired differently, which can make everyday sights, sounds, and touches feel very different from how other people experience them.",
+                "hypersensitivity": "Hypersensitivity: Sometimes, your child’s brain might make sounds, lights, or touches seem much stronger or more intense than they are. This can make normal experiences feel overwhelming or even painful.",
+                "hyposensitivity": "Hyposensitivity: Other times, your child’s brain might not pick up on things as strongly. They might not notice sounds, lights, or touches that others do, which can make them seek out stronger experiences to feel balanced.",
+                "sensoryChallengesTitle": "2. Sensory Processing Challenges",
+                "sensoryChallenges": "Children with ASD often have something called Sensory Processing Disorder (SPD), which means their brain has trouble organizing and responding to the information it gets from their senses.",
+                "overResponsive": "Over-Responsive: Your child might react too strongly to certain things, like avoiding certain textures or covering their ears in noisy places.",
+                "underResponsive": "Under-Responsive: On the flip side, they might not react much at all to things that would bother others, like not noticing when they are touched or when there’s a loud noise.",
+                "geneticsTitle": "3. Genetics Play a Role",
+                "genetics": "The way your child processes sensory information can also be influenced by genetics—basically, it can run in the family.",
+                "inheritedSensitivities": "Inherited Sensitivities: If you or another family member has sensory sensitivities, your child might have them too. It’s something that can be passed down through genes.",
+                "environmentTitle": "4. The Environment Matters",
+                "environment": "Your child’s environment and early experiences can also shape how they respond to sensory input.",
+                "earlyExperiences": "Early Experiences: If your child didn’t have much exposure to different sensory experiences when they were younger, they might be more sensitive when they encounter new things.",
+                "stressChanges": "Stress and Changes: When your child is stressed or in a new environment, their sensory sensitivities might become more intense because their brain is already on high alert.",
+                "anxietyTitle": "5. Anxiety and Sensory Sensitivity",
+                "anxiety": "Anxiety can make sensory sensitivities worse. When your child is anxious, their body is on high alert, which can make sounds, lights, and touches feel even more overwhelming.",
+                "heightenedAlertness": "Heightened Alertness: If your child is feeling anxious, they might be more sensitive to sensory input, making ordinary experiences feel much more intense.",
+                "avoidance": "Avoidance: To cope with this, your child might start avoiding certain sensory experiences, which can make it harder for them to adjust to new situations.",
                 "next": "Next: What Should I Do?",
                 "backHome": "Back to Home",
                 "home": "Home",
@@ -56,9 +104,27 @@
             },
             "zh": {
                 "title": "為什麼會發生這種情況？",
-                "exploringReasoning": "探索感覺反應背後的原因",
-                "sensoryProcessing": "感覺處理差異的原因是大腦以獨特的方式處理感覺信息。對於某些孩子來說，某些感覺可能是壓倒性的；相反，對於其他孩子來說，某些感觀可能沒有得到足夠的滿足，從而尋求更多的刺激。",
-                "exampleBehavior": "例如，您的孩子可能會在嘈雜的環境中捂住耳朵減少聽覺刺激；或尋求強烈的感覺體驗，如旋轉。這些行為是您的孩子管理感覺體驗並感覺更舒適的一種方式。",
+                "understandingReason": "了解自閉症譜系障礙 (ASD) 中感覺反應的原因",
+                "description1": "如果您的孩子患有自閉症譜系障礙 (ASD)，您可能會注意到他們以獨特的方式對視覺、聽覺、觸覺和其他感覺體驗作出反應。這些反應發生是因為他們的大腦以不同的方式處理感覺信息。以下是原因：",
+                "brainDifferencesTitle": "1. 大腦差異",
+                "brainDifferences": "患有ASD的孩子的大腦結構與眾不同，這會使日常的視覺、聽覺和觸覺與其他人的感受大不相同。",
+                "hypersensitivity": "高敏感度：有時候，您的孩子的大腦可能會將聲音、光線或觸覺感受得比實際情況更強烈或更強烈。這可能會使正常的體驗變得壓倒性甚至痛苦。",
+                "hyposensitivity": "低敏感度：其他時候，您的孩子的大腦可能無法像其他人一樣強烈地感知事物。他們可能不會注意到聲音、光線或觸覺，這會使他們尋求更強烈的體驗以保持平衡。",
+                "sensoryChallengesTitle": "2. 感覺處理挑戰",
+                "sensoryChallenges": "患有ASD的孩子通常會有一種稱為感覺處理障礙 (SPD) 的情況，這意味著他們的大腦難以組織和回應來自感官的信息。",
+                "overResponsive": "過度反應：您的孩子可能對某些事物反應過度，例如避免某些質地或在嘈雜的地方捂住耳朵。",
+                "underResponsive": "反應不足：相反，他們可能對一般的刺激不太敏感，例如沒有注意到被觸摸或沒有察覺到有大聲的噪音。",
+                "geneticsTitle": "3. 遺傳因素的作用",
+                "genetics": "您的孩子處理感覺信息的方式也可能受到遺傳因素的影響，簡而言之，這可能是一種遺傳特徵。",
+                "inheritedSensitivities": "遺傳敏感性：如果您或其他家庭成員有感覺敏感性，您的孩子可能也會有。這是一種可以通過基因遺傳的特徵。",
+                "environmentTitle": "4. 環境的影響",
+                "environment": "孩子的環境和早期經歷也會影響他們對感覺輸入的反應。",
+                "earlyExperiences": "早期經歷：如果您的孩子在年幼時沒有接觸到各種感覺體驗，那麼當他們遇到新事物時，他們可能會更敏感。",
+                "stressChanges": "壓力和變化：當您的孩子感到壓力或處於新環境中時，他們的感覺敏感性可能會變得更強烈，因為他們的大腦已經處於高度警覺狀態。",
+                "anxietyTitle": "5. 焦慮與感覺敏感性",
+                "anxiety": "焦慮會使感覺敏感性惡化。當您的孩子感到焦慮時，他們的身體處於高度警覺狀態，這可能會使聲音、光線和觸感變得更加壓倒性。",
+                "heightenedAlertness": "高度警覺：如果您的孩子感到焦慮，他們可能會對感覺輸入更加敏感，使普通的體驗變得更加強烈。",
+                "avoidance": "回避行為：為了應對這種情況，您的孩子可能會開始避免某些感覺體驗，這可能會使他們更難適應新情況。",
                 "next": "下一步：我該怎麼做？",
                 "backHome": "返回首頁",
                 "home": "首頁",
@@ -73,9 +139,27 @@
 
         function translateContent(lang) {
             document.getElementById("title").textContent = translations[lang]["title"];
-            document.getElementById("exploringReasoning").textContent = translations[lang]["exploringReasoning"];
-            document.getElementById("sensoryProcessing").textContent = translations[lang]["sensoryProcessing"];
-            document.getElementById("exampleBehavior").textContent = translations[lang]["exampleBehavior"];
+            document.getElementById("understandingReason").textContent = translations[lang]["understandingReason"];
+            document.getElementById("description1").textContent = translations[lang]["description1"];
+            document.getElementById("brainDifferencesTitle").textContent = translations[lang]["brainDifferencesTitle"];
+            document.getElementById("brainDifferences").textContent = translations[lang]["brainDifferences"];
+            document.getElementById("hypersensitivity").textContent = translations[lang]["hypersensitivity"];
+            document.getElementById("hyposensitivity").textContent = translations[lang]["hyposensitivity"];
+            document.getElementById("sensoryChallengesTitle").textContent = translations[lang]["sensoryChallengesTitle"];
+            document.getElementById("sensoryChallenges").textContent = translations[lang]["sensoryChallenges"];
+            document.getElementById("overResponsive").textContent = translations[lang]["overResponsive"];
+            document.getElementById("underResponsive").textContent = translations[lang]["underResponsive"];
+            document.getElementById("geneticsTitle").textContent = translations[lang]["geneticsTitle"];
+            document.getElementById("genetics").textContent = translations[lang]["genetics"];
+            document.getElementById("inheritedSensitivities").textContent = translations[lang]["inheritedSensitivities"];
+            document.getElementById("environmentTitle").textContent = translations[lang]["environmentTitle"];
+            document.getElementById("environment").textContent = translations[lang]["environment"];
+            document.getElementById("earlyExperiences").textContent = translations[lang]["earlyExperiences"];
+            document.getElementById("stressChanges").textContent = translations[lang]["stressChanges"];
+            document.getElementById("anxietyTitle").textContent = translations[lang]["anxietyTitle"];
+            document.getElementById("anxiety").textContent = translations[lang]["anxiety"];
+            document.getElementById("heightenedAlertness").textContent = translations[lang]["heightenedAlertness"];
+            document.getElementById("avoidance").textContent = translations[lang]["avoidance"];
             document.getElementById("next").textContent = translations[lang]["next"];
             document.getElementById("backHome").textContent = translations[lang]["backHome"];
             document.getElementById("home").textContent = translations[lang]["home"];
