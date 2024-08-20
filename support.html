@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Should I Do?</title>
     <link rel="stylesheet" href="styleforall.css"> <!-- Link to your main CSS file -->
-    <script src="script.js" defer></script> <!-- Link to your JavaScript file -->
 </head>
 <body>
     <div class="sidebar">
@@ -26,14 +25,50 @@
         <button onclick="translateContent('zh')">中文 (繁體)</button>
 
         <h2 id="title">What Should I Do?</h2>
-        <p id="steps">Steps to Support Your Child</p>
-        <p id="seekHelp">
-            <strong>Seek Professional Help:</strong> The first and most important step is to consult with medical professionals, especially an <strong>occupational therapist (OT)</strong>. An OT can assess your child’s sensory needs and develop a personalized intervention plan that’s tailored specifically to them.
-        </p>
-        <p id="usingTool">
-            <strong>Using This Tool:</strong> While you’re seeking or waiting for professional guidance, you can use our <strong>Sensory Diet Plan Generator</strong> to create a supportive plan for your child. This tool is designed to help manage your child’s sensory needs in the meantime and can complement the advice you receive from an OT.
-        </p>
-        <p><a id="next" href="sensory-diet.html">Next: What Is a Sensory Diet Plan? Does It Work?</a></p>
+        <p id="stepsToSupport">Steps to Support Your Child with Sensory Sensitivities</p>
+
+        <h3 id="seekProfessionalHelp">1. Seek Professional Help</h3>
+        <p id="seekHelpDescription">The first and most important step is to consult with a healthcare professional, particularly an occupational therapist (OT). OTs specialise in helping children with sensory processing issues and can work with you to develop a personalised plan that meets your child’s unique needs.</p>
+        <ul>
+            <li id="ot">Occupational Therapy: An OT will assess your child’s sensory processing patterns and how they impact daily activities. They can create a customised "sensory diet" filled with activities that help your child manage their sensory needs throughout the day.</li>
+            <li id="devPediatrician">Developmental Pediatrician: A developmental pediatrician can also provide a broader assessment of your child’s development, including sensory processing, and guide you to the right resources and therapies.</li>
+        </ul>
+        <p id="seekHelpWhy">Why This Helps: Professional guidance ensures that the strategies you use are safe, effective, and tailored specifically to your child. OTs are trained to help children develop coping strategies, improve their sensory processing, and increase their ability to participate in everyday activities.</p>
+
+        <h3 id="useThisTool">2. Use This Tool for Additional Support</h3>
+        <p id="useToolDescription">While you’re seeking professional help, or if you’re waiting for an appointment, you can use our Sensory Diet Plan Generator to get started with some helpful activities at home.</p>
+        <ul>
+            <li id="sensoryDietGenerator">Sensory Diet Plan Generator: This tool helps you create a simple, personalised plan based on your child’s specific sensory sensitivities. It suggests activities that can calm, alert, or balance your child’s sensory system, making daily life more manageable.</li>
+            <li id="consistency">Consistency is Key: Incorporate these sensory activities into your child’s daily routine. Regular sensory breaks can help your child feel more balanced and less overwhelmed by sensory input.</li>
+        </ul>
+        <p id="useToolWhy">Why This Helps: This tool offers a starting point and can provide immediate relief while you wait for more comprehensive support from an OT. It also empowers you as a caregiver to take proactive steps in supporting your child.</p>
+
+        <h3 id="createEnvironment">3. Create a Sensory-Friendly Environment</h3>
+        <p id="createEnvironmentDescription">Making small changes at home or in your child’s daily environment can make a big difference in how they experience the world.</p>
+        <ul>
+            <li id="lighting">Adjust the Lighting: Use soft, natural lighting instead of harsh fluorescent lights. You can also use dimmers to adjust the light levels to what your child is comfortable with.</li>
+            <li id="noise">Reduce Noise: Try to minimise background noise at home by turning off the TV when it’s not being watched or using noise-canceling headphones for your child in noisy environments.</li>
+            <li id="textures">Introduce Comforting Textures: Choose clothes and bedding that your child finds comfortable. Removing tags from clothes or choosing softer fabrics can help reduce tactile discomfort.</li>
+        </ul>
+        <p id="createEnvironmentWhy">Why This Helps: A sensory-friendly environment can reduce the intensity of your child’s sensory experiences, helping them feel more comfortable and secure.</p>
+
+        <h3 id="educateAdvocate">4. Educate and Advocate</h3>
+        <p id="educateAdvocateDescription">Learn as much as you can about sensory processing issues and how they affect your child. This knowledge will empower you to advocate for your child’s needs in different settings, such as school or community activities.</p>
+        <ul>
+            <li id="learn">Learn About Sensory Processing: Read up on sensory processing and how it relates to autism and other developmental conditions. The more you know, the better equipped you’ll be to support your child.</li>
+            <li id="communicate">Communicate with Others: Share your child’s sensory needs with teachers, family members, and caregivers. Helping others understand your child’s needs can make it easier for them to offer the right support.</li>
+        </ul>
+        <p id="educateAdvocateWhy">Why This Helps: When others understand your child’s sensory needs, they’re more likely to be supportive and accommodating, making your child’s experiences in different environments more positive.</p>
+
+        <h3 id="bePatient">5. Be Patient and Supportive</h3>
+        <p id="bePatientDescription">Remember, your child’s sensory sensitivities are a natural part of who they are. With the right support, they can learn to manage their reactions and thrive in their environment.</p>
+        <ul>
+            <li id="reassurance">Provide Reassurance: Let your child know that it’s okay to feel overwhelmed sometimes and that you’re there to help them through it.</li>
+            <li id="celebrateProgress">Celebrate Progress: Recognise and celebrate small victories, whether it’s trying a new food, wearing a new texture of clothing, or staying calm in a noisy environment.</li>
+        </ul>
+        <p id="bePatientWhy">Why This Helps: Patience and positive reinforcement can build your child’s confidence and encourage them to keep trying new things, even when they’re challenging.</p>
+
+        <p><a id="next" href="sensory-diet.html">Next: What Is a Sensory Diet Plan?</a></p>
         <p><a id="backHome" href="index.html">Back to Home</a></p>
     </div>
 
@@ -41,10 +76,34 @@
         const translations = {
             "en": {
                 "title": "What Should I Do?",
-                "steps": "Steps to Support Your Child",
-                "seekHelp": "Seek Professional Help: The first and most important step is to consult with medical professionals, especially an occupational therapist (OT). An OT can assess your child’s sensory needs and develop a personalized intervention plan that’s tailored specifically to them.",
-                "usingTool": "Using This Tool: While you’re seeking or waiting for professional guidance, you can use our Sensory Diet Plan Generator to create a supportive plan for your child. This tool is designed to help manage your child’s sensory needs in the meantime and can complement the advice you receive from an OT.",
-                "next": "Next: What Is a Sensory Diet Plan? Does It Work?",
+                "stepsToSupport": "Steps to Support Your Child with Sensory Sensitivities",
+                "seekProfessionalHelp": "1. Seek Professional Help",
+                "seekHelpDescription": "The first and most important step is to consult with a healthcare professional, particularly an occupational therapist (OT). OTs specialise in helping children with sensory processing issues and can work with you to develop a personalised plan that meets your child’s unique needs.",
+                "ot": "Occupational Therapy: An OT will assess your child’s sensory processing patterns and how they impact daily activities. They can create a customised 'sensory diet' filled with activities that help your child manage their sensory needs throughout the day.",
+                "devPediatrician": "Developmental Pediatrician: A developmental pediatrician can also provide a broader assessment of your child’s development, including sensory processing, and guide you to the right resources and therapies.",
+                "seekHelpWhy": "Why This Helps: Professional guidance ensures that the strategies you use are safe, effective, and tailored specifically to your child. OTs are trained to help children develop coping strategies, improve their sensory processing, and increase their ability to participate in everyday activities.",
+                "useThisTool": "2. Use This Tool for Additional Support",
+                "useToolDescription": "While you’re seeking professional help, or if you’re waiting for an appointment, you can use our Sensory Diet Plan Generator to get started with some helpful activities at home.",
+                "sensoryDietGenerator": "Sensory Diet Plan Generator: This tool helps you create a simple, personalised plan based on your child’s specific sensory sensitivities. It suggests activities that can calm, alert, or balance your child’s sensory system, making daily life more manageable.",
+                "consistency": "Consistency is Key: Incorporate these sensory activities into your child’s daily routine. Regular sensory breaks can help your child feel more balanced and less overwhelmed by sensory input.",
+                "useToolWhy": "Why This Helps: This tool offers a starting point and can provide immediate relief while you wait for more comprehensive support from an OT. It also empowers you as a caregiver to take proactive steps in supporting your child.",
+                "createEnvironment": "3. Create a Sensory-Friendly Environment",
+                "createEnvironmentDescription": "Making small changes at home or in your child’s daily environment can make a big difference in how they experience the world.",
+                "lighting": "Adjust the Lighting: Use soft, natural lighting instead of harsh fluorescent lights. You can also use dimmers to adjust the light levels to what your child is comfortable with.",
+                "noise": "Reduce Noise: Try to minimise background noise at home by turning off the TV when it’s not being watched or using noise-canceling headphones for your child in noisy environments.",
+                "textures": "Introduce Comforting Textures: Choose clothes and bedding that your child finds comfortable. Removing tags from clothes or choosing softer fabrics can help reduce tactile discomfort.",
+                "createEnvironmentWhy": "Why This Helps: A sensory-friendly environment can reduce the intensity of your child’s sensory experiences, helping them feel more comfortable and secure.",
+                "educateAdvocate": "4. Educate and Advocate",
+                "educateAdvocateDescription": "Learn as much as you can about sensory processing issues and how they affect your child. This knowledge will empower you to advocate for your child’s needs in different settings, such as school or community activities.",
+                "learn": "Learn About Sensory Processing: Read up on sensory processing and how it relates to autism and other developmental conditions. The more you know, the better equipped you’ll be to support your child.",
+                "communicate": "Communicate with Others: Share your child’s sensory needs with teachers, family members, and caregivers. Helping others understand your child’s needs can make it easier for them to offer the right support.",
+                "educateAdvocateWhy": "Why This Helps: When others understand your child’s sensory needs, they’re more likely to be supportive and accommodating, making your child’s experiences in different environments more positive.",
+                "bePatient": "5. Be Patient and Supportive",
+                "bePatientDescription": "Remember, your child’s sensory sensitivities are a natural part of who they are. With the right support, they can learn to manage their reactions and thrive in their environment.",
+                "reassurance": "Provide Reassurance: Let your child know that it’s okay to feel overwhelmed sometimes and that you’re there to help them through it.",
+                "celebrateProgress": "Celebrate Progress: Recognise and celebrate small victories, whether it’s trying a new food, wearing a new texture of clothing, or staying calm in a noisy environment.",
+                "bePatientWhy": "Why This Helps: Patience and positive reinforcement can build your child’s confidence and encourage them to keep trying new things, even when they’re challenging.",
+                "next": "Next: What Is a Sensory Diet Plan?",
                 "backHome": "Back to Home",
                 "home": "Home",
                 "whatIsHappening": "What Is Happening?",
@@ -56,10 +115,34 @@
             },
             "zh": {
                 "title": "我該怎麼做？",
-                "steps": "支持您孩子的步驟",
-                "seekHelp": "尋求專業幫助：第一步也是最重要的一步是諮詢醫療專業人員，例如職業治療師。職業治療師會評估您孩子的感覺需求並制定專為他們量身定制的治療計劃。",
-                "usingTool": "使用此工具：當您正在尋求或等待專業指導時，您可以使用我們的感覺餐單生成器來為您的孩子創建輔助計劃。此工具旨在幫助管理孩子的感覺需求，並可補充職業治療死提出的建議。",
-                "next": "下一步：什麼是感覺餐單？它有效嗎？",
+                "stepsToSupport": "支持您孩子的步驟",
+                "seekProfessionalHelp": "1. 尋求專業幫助",
+                "seekHelpDescription": "第一步也是最重要的一步是諮詢醫療專業人員，尤其是職業治療師（OT）。職業治療師專門幫助有感覺處理問題的孩子，他們可以與您合作制定符合您孩子獨特需求的個性化計劃。",
+                "ot": "職業治療：職業治療師將評估您孩子的感覺處理模式以及它們如何影響日常活動。他們可以創建一個定制的“感覺餐單”，其中充滿了有助於孩子全天管理其感覺需求的活動。",
+                "devPediatrician": "發展兒科醫生：發展兒科醫生還可以對孩子的發育進行更廣泛的評估，包括感覺處理，並引導您找到合適的資源和治療方法。",
+                "seekHelpWhy": "這為什麼有幫助：專業指導確保您使用的策略是安全、有效的，並且專門針對您的孩子量身定制。職業治療師接受過幫助孩子制定應對策略、改善感覺處理並提高他們參與日常活動能力的訓練。",
+                "useThisTool": "2. 使用這個工具來獲得額外支持",
+                "useToolDescription": "在您尋求專業幫助的同時，或者在等待預約時，您可以使用我們的感覺餐單生成器來在家中開始進行一些有幫助的活動。",
+                "sensoryDietGenerator": "感覺餐單生成器：這個工具幫助您根據孩子的特定感覺敏感度創建一個簡單的、個性化的計劃。它建議的活動可以平靜、激勵或平衡孩子的感覺系統，使日常生活變得更加可控。",
+                "consistency": "一致性是關鍵：將這些感覺活動融入孩子的日常生活中。定期的感覺休息可以幫助孩子感覺更平衡，減少被感覺輸入壓倒的情況。",
+                "useToolWhy": "這為什麼有幫助：這個工具提供了一個起點，並且可以在您等待更全面的職業治療支持時提供即時的緩解。它還賦予您作為照顧者的能力，使您能夠積極支持孩子。",
+                "createEnvironment": "3. 創建一個感覺友好的環境",
+                "createEnvironmentDescription": "在家中或孩子的日常環境中進行一些小改變可以大大改變他們對世界的感受。",
+                "lighting": "調整照明：使用柔和的自然光，而不是刺眼的熒光燈。您還可以使用調光器將光線調整到孩子感覺舒適的水平。",
+                "noise": "減少噪音：通過關閉不看電視或為孩子使用降噪耳機來儘量減少家庭中的背景噪音。",
+                "textures": "引入舒適的觸感：選擇孩子感覺舒適的衣服和床上用品。去掉衣服上的標籤或選擇更柔軟的面料可以幫助減少觸覺不適。",
+                "createEnvironmentWhy": "這為什麼有幫助：一個感覺友好的環境可以減少孩子的感覺體驗強度，幫助他們感覺更舒適和安全。",
+                "educateAdvocate": "4. 教育和倡導",
+                "educateAdvocateDescription": "盡可能多地了解感覺處理問題及其如何影響您的孩子。這些知識將賦予您在不同環境中為孩子的需求倡導的能力，例如學校或社區活動。",
+                "learn": "了解感覺處理：閱讀感覺處理及其與自閉症和其他發展性狀況的關係。了解得越多，您就越有能力支持您的孩子。",
+                "communicate": "與他人溝通：將孩子的感覺需求告訴教師、家人和照顧者。幫助他人理解孩子的需求可以使他們更容易提供正確的支持。",
+                "educateAdvocateWhy": "這為什麼有幫助：當他人了解孩子的感覺需求時，他們更有可能提供支持和包容，從而使孩子在不同環境中的體驗更為積極。",
+                "bePatient": "5. 保持耐心和支持",
+                "bePatientDescription": "請記住，孩子的感覺敏感性是他們自然的一部分。有了正確的支持，他們可以學會管理自己的反應並在環境中茁壯成長。",
+                "reassurance": "提供保證：讓孩子知道有時感到不知所措是可以的，您會幫助他們度過難關。",
+                "celebrateProgress": "慶祝進步：認識和慶祝小小的勝利，無論是嘗試新食物，穿上新的衣物質地，還是能夠在嘈雜環境中保持冷靜。",
+                "bePatientWhy": "這為什麼有幫助：耐心和積極的強化可以建立孩子的信心，鼓勵他們繼續嘗試新事物，即使這些挑戰是困難的。",
+                "next": "下一步：什麼是感覺餐單？",
                 "backHome": "返回首頁",
                 "home": "首頁",
                 "whatIsHappening": "發生了什麼？",
@@ -73,9 +156,33 @@
 
         function translateContent(lang) {
             document.getElementById("title").textContent = translations[lang]["title"];
-            document.getElementById("steps").textContent = translations[lang]["steps"];
-            document.getElementById("seekHelp").textContent = translations[lang]["seekHelp"];
-            document.getElementById("usingTool").textContent = translations[lang]["usingTool"];
+            document.getElementById("stepsToSupport").textContent = translations[lang]["stepsToSupport"];
+            document.getElementById("seekProfessionalHelp").textContent = translations[lang]["seekProfessionalHelp"];
+            document.getElementById("seekHelpDescription").textContent = translations[lang]["seekHelpDescription"];
+            document.getElementById("ot").textContent = translations[lang]["ot"];
+            document.getElementById("devPediatrician").textContent = translations[lang]["devPediatrician"];
+            document.getElementById("seekHelpWhy").textContent = translations[lang]["seekHelpWhy"];
+            document.getElementById("useThisTool").textContent = translations[lang]["useThisTool"];
+            document.getElementById("useToolDescription").textContent = translations[lang]["useToolDescription"];
+            document.getElementById("sensoryDietGenerator").textContent = translations[lang]["sensoryDietGenerator"];
+            document.getElementById("consistency").textContent = translations[lang]["consistency"];
+            document.getElementById("useToolWhy").textContent = translations[lang]["useToolWhy"];
+            document.getElementById("createEnvironment").textContent = translations[lang]["createEnvironment"];
+            document.getElementById("createEnvironmentDescription").textContent = translations[lang]["createEnvironmentDescription"];
+            document.getElementById("lighting").textContent = translations[lang]["lighting"];
+            document.getElementById("noise").textContent = translations[lang]["noise"];
+            document.getElementById("textures").textContent = translations[lang]["textures"];
+            document.getElementById("createEnvironmentWhy").textContent = translations[lang]["createEnvironmentWhy"];
+            document.getElementById("educateAdvocate").textContent = translations[lang]["educateAdvocate"];
+            document.getElementById("educateAdvocateDescription").textContent = translations[lang]["educateAdvocateDescription"];
+            document.getElementById("learn").textContent = translations[lang]["learn"];
+            document.getElementById("communicate").textContent = translations[lang]["communicate"];
+            document.getElementById("educateAdvocateWhy").textContent = translations[lang]["educateAdvocateWhy"];
+            document.getElementById("bePatient").textContent = translations[lang]["bePatient"];
+            document.getElementById("bePatientDescription").textContent = translations[lang]["bePatientDescription"];
+            document.getElementById("reassurance").textContent = translations[lang]["reassurance"];
+            document.getElementById("celebrateProgress").textContent = translations[lang]["celebrateProgress"];
+            document.getElementById("bePatientWhy").textContent = translations[lang]["bePatientWhy"];
             document.getElementById("next").textContent = translations[lang]["next"];
             document.getElementById("backHome").textContent = translations[lang]["backHome"];
             document.getElementById("home").textContent = translations[lang]["home"];
